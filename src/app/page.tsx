@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -12,17 +11,16 @@ export default function Home() {
       // Navigation
       nav_home: "Home",
       nav_features: "Features",
-      nav_architecture: "Architecture",
       nav_pricing: "Pricing",
       nav_about: "About",
       nav_contact: "Contact",
-      
+
       // Hero Section
       hero_title: "Next Generation Enterprise Operating System",
       hero_subtitle: "Apadana is an immutable Linux distribution built on Parch Linux with advanced centralized management capabilities, providing enterprise-grade security and stability at a fraction of traditional costs.",
       hero_cta1: "Get Free Trial",
       hero_cta2: "View Features",
-      
+
       // Features Section
       features_title: "Key Features",
       features_subtitle: "Enterprise-grade capabilities designed for modern organizations",
@@ -38,17 +36,7 @@ export default function Home() {
       feature5_desc: "Fraction of traditional OS licensing costs while maintaining enterprise-grade functionality and support.",
       feature6_title: "24/7 Support",
       feature6_desc: "Round-the-clock technical support for commercial customers with guaranteed response times.",
-      
-      // Architecture Section
-      architecture_title: "Technical Architecture",
-      architecture_subtitle: "Deep dive into the innovative design that powers Apadana Linux",
-      arch_core_title: "Immutable Core",
-      arch_core_desc: "Base system remains frozen and protected from unauthorized modifications",
-      arch_updates_title: "Update Strategy",
-      arch_updates_desc: "Dual-path system with scheduled releases and emergency patches",
-      arch_network_title: "Network Management",
-      arch_network_desc: "Master-slave topology with centralized control panel",
-      
+
       // How It Works Section
       how_title: "How It Works",
       how_subtitle: "Simple deployment process for enterprise-scale management",
@@ -64,7 +52,7 @@ export default function Home() {
       step5_desc: "Instantly deploy updates and security patches to all devices",
       step6_title: "Generate Reports",
       step6_desc: "Create comprehensive reports and maintain audit logs",
-      
+
       // Use Cases Section
       usecases_title: "Industry Applications",
       usecases_subtitle: "Trusted across diverse sectors for enterprise infrastructure",
@@ -78,7 +66,7 @@ export default function Home() {
       usecase4_desc: "Developer-friendly environment with modern tools and container support",
       usecase5_title: "Healthcare Facilities",
       usecase5_desc: "Stable, HIPAA-compliant systems ensuring patient data protection",
-      
+
       // Pricing Section
       pricing_title: "Simple, Transparent Pricing",
       pricing_subtitle: "Choose the plan that fits your organization's needs",
@@ -99,7 +87,7 @@ export default function Home() {
       pricing_enterprise_feature6: "Priority updates",
       pricing_home_cta: "Get Started",
       pricing_enterprise_cta: "Request Quote",
-      
+
       // Comparison Section
       comparison_title: "Why Choose Apadana",
       comparison_subtitle: "See how we compare to traditional solutions",
@@ -114,7 +102,7 @@ export default function Home() {
       comparison_addons: "Add-ons",
       comparison_centralized: "Centralized",
       comparison_manual: "Manual",
-      
+
       // Technology Stack Section
       tech_title: "Technology Stack",
       tech_subtitle: "Built on proven open-source technologies",
@@ -130,22 +118,13 @@ export default function Home() {
       tech_optimization_desc: "zRam optimization and custom kernel enhancements",
       tech_management_title: "Management",
       tech_management_desc: "Web-based administration panel with REST API",
-      
+
       // About Section
       about_title: "About Apadana",
       about_subtitle: "Democratizing enterprise-grade infrastructure management",
       about_mission: "Our mission is to transform how organizations manage their IT infrastructure by providing enterprise-grade operating system capabilities at accessible price points. We believe that advanced security, centralized management, and immutable architecture should be available to organizations of all sizes.",
       about_vision: "We envision a future where every organization can deploy and manage secure, stable computing infrastructure without the complexity and costs traditionally associated with enterprise solutions. Through our commitment to open-source values and commercial-grade reliability, Apadana Linux is making this vision a reality.",
-      team_title: "Our Team",
-      team_role1: "Lead Developer",
-      team_desc1: "Core system architecture and security",
-      team_role2: "Product Manager",
-      team_desc2: "User experience and enterprise features",
-      team_role3: "Security Engineer",
-      team_desc3: "System hardening and threat analysis",
-      team_role4: "Support Lead",
-      team_desc4: "Customer success and technical support",
-      
+
       // Contact Section
       contact_title: "Get in Touch",
       contact_subtitle: "Ready to transform your infrastructure? Let's talk.",
@@ -157,9 +136,8 @@ export default function Home() {
       contact_submit: "Send Message",
       contact_email_title: "Email",
       contact_phone_title: "Phone",
-      contact_address_title: "Address",
       contact_follow: "Follow Us",
-      
+
       // Footer
       footer_company: "Company",
       footer_about: "About",
@@ -187,17 +165,16 @@ export default function Home() {
       // Navigation
       nav_home: "خانه",
       nav_features: "ویژگی‌ها",
-      nav_architecture: "معماری",
       nav_pricing: "قیمت‌گذاری",
       nav_about: "درباره ما",
       nav_contact: "تماس با ما",
-      
+     
       // Hero Section
       hero_title: "سیستم عامل سازمانی نسل جدید",
       hero_subtitle: "آپادانا یک توزیع لینوکس تغییرناپذیر مبتنی بر پارچ لینوکس با قابلیت‌های پیشرفته مدیریت متمرکز است که امنیت و پایداری در سطح سازمانی را با بخش کوچکی از هزینه‌های سنتی فراهم می‌کند.",
       hero_cta1: "دریافت نسخه آزمایشی",
       hero_cta2: "مشاهده ویژگی‌ها",
-      
+     
       // Features Section
       features_title: "ویژگی‌های کلیدی",
       features_subtitle: "قابلیت‌های سطح سازمانی طراحی شده برای سازمان‌های مدرن",
@@ -213,17 +190,7 @@ export default function Home() {
       feature5_desc: "بخش کوچکی از هزینه‌های مجوز سیستم عامل سنتی با حفظ قابلیت‌ها و پشتیبانی در سطح سازمانی.",
       feature6_title: "پشتیبانی شبانه‌روزی",
       feature6_desc: "پشتیبانی فنی ۲۴ ساعته برای مشتریان تجاری با زمان‌های پاسخگویی تضمین شده.",
-      
-      // Architecture Section
-      architecture_title: "معماری فنی",
-      architecture_subtitle: "غرق شدن در طراحی نوآورانه که آپادانا لینوکس را قدرت می‌بخشد",
-      arch_core_title: "هسته تغییرناپذیر",
-      arch_core_desc: "سیستم پایه یخ زده و محافظت شده از تغییرات غیرمجاز باقی می‌ماند",
-      arch_updates_title: "استراتژی به‌روزرسانی",
-      arch_updates_desc: "سیستم دو مسیری با انتشار برنامه‌ریزی شده و پچ‌های اضطراری",
-      arch_network_title: "مدیریت شبکه",
-      arch_network_desc: "توپولوژی مستر-اسلیو با پنل کنترل متمرکز",
-      
+     
       // How It Works Section
       how_title: "نحوه عملکرد",
       how_subtitle: "فرآیند استقرار ساده برای مدیریت در مقیاس سازمانی",
@@ -239,7 +206,7 @@ export default function Home() {
       step5_desc: "استقرار فوری به‌روزرسانی‌ها و پچ‌های امنیتی برای همه دستگاه‌ها",
       step6_title: "تولید گزارش‌ها",
       step6_desc: "ایجاد گزارش‌های جامع و نگهداری لاگ‌های حسابرسی",
-      
+     
       // Use Cases Section
       usecases_title: "کاربردهای صنعتی",
       usecases_subtitle: "مورد اعتماد در بخش‌های مختلف برای زیرساخت سازمانی",
@@ -253,7 +220,7 @@ export default function Home() {
       usecase4_desc: "محیط دوستانه برای توسعه‌دهندگان با ابزارهای مدرن و پشتیبانی کانتینر",
       usecase5_title: "مراکز درمانی",
       usecase5_desc: "سیستم‌های پایدار و مطابق با HIPAA تضمین حفاظت از داده‌های بیماران",
-      
+     
       // Pricing Section
       pricing_title: "قیمت‌گذاری ساده و شفاف",
       pricing_subtitle: "پلانی را انتخاب کنید که نیازهای سازمان شما را برآورده کند",
@@ -274,7 +241,7 @@ export default function Home() {
       pricing_enterprise_feature6: "به‌روزرسانی‌های اولویت‌دار",
       pricing_home_cta: "شروع کنید",
       pricing_enterprise_cta: "درخواست پیشنهاد",
-      
+     
       // Comparison Section
       comparison_title: "چرا آپادانا را انتخاب کنیم",
       comparison_subtitle: "ببینید چگونه با راه‌حل‌های سنتی مقایسه می‌کنیم",
@@ -289,7 +256,7 @@ export default function Home() {
       comparison_addons: "افزودنی‌ها",
       comparison_centralized: "متمرکز",
       comparison_manual: "دستی",
-      
+     
       // Technology Stack Section
       tech_title: "پشته فناوری",
       tech_subtitle: "ساخته شده بر روی فناوری‌های متن‌باز اثبات شده",
@@ -305,22 +272,13 @@ export default function Home() {
       tech_optimization_desc: "بهینه‌سازی zRam و بهبودهای هسته سفارشی",
       tech_management_title: "مدیریت",
       tech_management_desc: "پنل مدیریت مبتنی بر وب با API REST",
-      
+     
       // About Section
       about_title: "درباره آپادانا",
       about_subtitle: "دموکراتیز کردن مدیریت زیرساخت در سطح سازمانی",
       about_mission: "مأموریت ما تبدیل نحوه مدیریت زیرساخت فناوری اطلاعات سازمان‌ها با ارائه قابلیت‌های سیستم عامل در سطح سازمانی در نقاط قیمت قابل دسترس است. ما معتقدیم که امنیت پیشرفته، مدیریت متمرکز، و معماری تغییرناپذیر باید برای سازمان‌های تمام اندازه‌ها در دسترس باشد.",
       about_vision: "ما آینده‌ای را تصور می‌کنیم که در آن هر سازمان بتواند زیرساخت محاسباتی امن و پایدار را بدون پیچیدگی و هزینه‌های سنتی مرتبط با راه‌حل‌های سازمانی مستقر و مدیریت کند. از طریق تعهد ما به ارزش‌های متن‌باز و قابلیت اطمینان در سطح تجاری، آپادانا لینوکس این چشم‌انداز را به واقعیت تبدیل می‌کند.",
-      team_title: "تیم ما",
-      team_role1: "توسعه‌دهنده ارشد",
-      team_desc1: "معماری سیستم هسته و امنیت",
-      team_role2: "مدیر محصول",
-      team_desc2: "تجربه کاربری و ویژگی‌های سازمانی",
-      team_role3: "مهندس امنیت",
-      team_desc3: "سخت‌سازی سیستم و تحلیل تهدید",
-      team_role4: "مدیر پشتیبانی",
-      team_desc4: "موفقیت مشتری و پشتیبانی فنی",
-      
+     
       // Contact Section
       contact_title: "تماس با ما",
       contact_subtitle: "آماده تبدیل زیرساخت خود هستید؟ بیایید صحبت کنیم.",
@@ -332,9 +290,8 @@ export default function Home() {
       contact_submit: "ارسال پیام",
       contact_email_title: "ایمیل",
       contact_phone_title: "تلفن",
-      contact_address_title: "آدرس",
       contact_follow: "ما را دنبال کنید",
-      
+     
       // Footer
       footer_company: "شرکت",
       footer_about: "درباره ما",
@@ -364,10 +321,8 @@ export default function Home() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     const savedLang = localStorage.getItem('apadana-lang') || 'en';
     setCurrentLang(savedLang);
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -388,52 +343,49 @@ export default function Home() {
     <div className={`min-h-screen ${currentLang === 'fa' ? 'rtl' : 'ltr'}`} dir={currentLang === 'fa' ? 'rtl' : 'ltr'}>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
+       
         * {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
         }
-
         :root {
           --bg-primary: #0a0e1a;
           --bg-secondary: #141925;
           --bg-tertiary: #1e2433;
           --bg-card: #1a1f2e;
           --bg-hover: #252b3d;
-          
+         
           --text-primary: #ffffff;
           --text-secondary: #94a3b8;
           --text-muted: #64748b;
-          
+         
           --accent-primary: #00d4ff;
           --accent-secondary: #0099cc;
           --accent-gradient: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-          
+         
           --border-color: #2a3441;
           --border-hover: #3a4556;
-          
+         
           --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
           --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
           --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
           --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-          
+         
           --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           --font-persian: 'Vazir', 'Tahoma', sans-serif;
-          
+         
           --transition-fast: 0.15s ease;
           --transition-base: 0.3s ease;
           --transition-slow: 0.5s ease;
-          
+         
           --border-radius: 8px;
           --border-radius-lg: 12px;
           --border-radius-xl: 16px;
         }
-
         html {
           scroll-behavior: smooth;
         }
-
         body {
           font-family: var(--font-primary);
           background-color: var(--bg-primary);
@@ -441,33 +393,27 @@ export default function Home() {
           line-height: 1.6;
           overflow-x: hidden;
         }
-
         body[dir="rtl"] {
           font-family: var(--font-persian);
         }
-
         .container {
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 20px;
         }
-
         h1, h2, h3, h4, h5, h6 {
           font-weight: 600;
           line-height: 1.2;
           margin-bottom: 1rem;
         }
-
         h1 { font-size: 3.5rem; font-weight: 800; }
         h2 { font-size: 2.5rem; font-weight: 700; }
         h3 { font-size: 1.875rem; font-weight: 600; }
         h4 { font-size: 1.5rem; font-weight: 600; }
-
         p {
           color: var(--text-secondary);
           margin-bottom: 1rem;
         }
-
         .header {
           position: fixed;
           top: 0;
@@ -478,16 +424,13 @@ export default function Home() {
           backdrop-filter: blur(10px);
           background: rgba(10, 14, 26, 0.8);
         }
-
         .header.scrolled {
           background: var(--bg-secondary);
           box-shadow: var(--shadow-md);
         }
-
         .nav {
           padding: 1rem 0;
         }
-
         .nav-container {
           max-width: 1200px;
           margin: 0 auto;
@@ -496,7 +439,6 @@ export default function Home() {
           justify-content: space-between;
           align-items: center;
         }
-
         .nav-brand .logo {
           font-size: 1.5rem;
           font-weight: 800;
@@ -505,13 +447,11 @@ export default function Home() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
-
         .nav-menu {
           display: flex;
           gap: 2rem;
           align-items: center;
         }
-
         .nav-link {
           color: var(--text-secondary);
           text-decoration: none;
@@ -519,11 +459,9 @@ export default function Home() {
           transition: color var(--transition-fast);
           position: relative;
         }
-
         .nav-link:hover {
           color: var(--accent-primary);
         }
-
         .nav-link::after {
           content: '';
           position: absolute;
@@ -534,17 +472,14 @@ export default function Home() {
           background: var(--accent-gradient);
           transition: width var(--transition-base);
         }
-
         .nav-link:hover::after {
           width: 100%;
         }
-
         .nav-actions {
           display: flex;
           align-items: center;
           gap: 1rem;
         }
-
         .lang-switcher {
           background: var(--bg-card);
           border: 1px solid var(--border-color);
@@ -555,12 +490,10 @@ export default function Home() {
           transition: all var(--transition-fast);
           font-weight: 500;
         }
-
         .lang-switcher:hover {
           background: var(--bg-hover);
           border-color: var(--accent-primary);
         }
-
         .mobile-menu-toggle {
           display: none;
           flex-direction: column;
@@ -570,7 +503,6 @@ export default function Home() {
           cursor: pointer;
           padding: 0.5rem;
         }
-
         .mobile-menu-toggle span {
           width: 25px;
           height: 3px;
@@ -578,7 +510,6 @@ export default function Home() {
           border-radius: 2px;
           transition: all var(--transition-base);
         }
-
         .hero {
           min-height: 100vh;
           display: flex;
@@ -587,7 +518,6 @@ export default function Home() {
           overflow: hidden;
           padding-top: 80px;
         }
-
         .hero-bg {
           position: absolute;
           top: 0;
@@ -596,7 +526,6 @@ export default function Home() {
           bottom: 0;
           z-index: -1;
         }
-
         .hero-gradient {
           position: absolute;
           top: 0;
@@ -606,24 +535,21 @@ export default function Home() {
           background: radial-gradient(ellipse at center top, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
                       radial-gradient(ellipse at center bottom, rgba(0, 153, 204, 0.1) 0%, transparent 50%);
         }
-
         .hero-particles {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
-          background-image: 
+          background-image:
               radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
               radial-gradient(circle at 80% 80%, rgba(0, 153, 204, 0.1) 0%, transparent 50%);
           animation: float 20s ease-in-out infinite;
         }
-
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(1deg); }
         }
-
         .hero-container {
           max-width: 1200px;
           margin: 0 auto;
@@ -633,11 +559,9 @@ export default function Home() {
           gap: 4rem;
           align-items: center;
         }
-
         .hero-content {
           animation: fadeInUp 1s ease-out;
         }
-
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -648,7 +572,6 @@ export default function Home() {
             transform: translateY(0);
           }
         }
-
         .hero-title {
           font-size: 3.5rem;
           font-weight: 800;
@@ -659,33 +582,28 @@ export default function Home() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
-
         .hero-subtitle {
           font-size: 1.25rem;
           color: var(--text-secondary);
           margin-bottom: 2rem;
           line-height: 1.6;
         }
-
         .hero-actions {
           display: flex;
           gap: 1rem;
           flex-wrap: wrap;
         }
-
         .hero-visual {
           display: flex;
           justify-content: center;
           align-items: center;
         }
-
         .hero-illustration {
           width: 400px;
           height: 400px;
           position: relative;
           animation: float 15s ease-in-out infinite;
         }
-
         .illustration-core {
           position: absolute;
           top: 50%;
@@ -697,7 +615,6 @@ export default function Home() {
           border-radius: 50%;
           box-shadow: 0 0 60px rgba(0, 212, 255, 0.3);
         }
-
         .illustration-nodes {
           position: absolute;
           top: 0;
@@ -705,7 +622,6 @@ export default function Home() {
           right: 0;
           bottom: 0;
         }
-
         .illustration-nodes::before,
         .illustration-nodes::after {
           content: '';
@@ -716,17 +632,14 @@ export default function Home() {
           border: 2px solid var(--accent-primary);
           border-radius: 50%;
         }
-
         .illustration-nodes::before {
           top: 20%;
           left: 20%;
         }
-
         .illustration-nodes::after {
           bottom: 20%;
           right: 20%;
         }
-
         .illustration-connections {
           position: absolute;
           top: 0;
@@ -734,7 +647,6 @@ export default function Home() {
           right: 0;
           bottom: 0;
         }
-
         .illustration-connections::before {
           content: '';
           position: absolute;
@@ -747,7 +659,6 @@ export default function Home() {
           transform: translate(-50%, -50%);
           opacity: 0.3;
         }
-
         .btn {
           display: inline-flex;
           align-items: center;
@@ -763,49 +674,40 @@ export default function Home() {
           position: relative;
           overflow: hidden;
         }
-
         .btn-primary {
           background: var(--accent-gradient);
           color: var(--bg-primary);
           box-shadow: var(--shadow-md);
         }
-
         .btn-primary:hover {
           transform: translateY(-2px);
           box-shadow: var(--shadow-lg);
         }
-
         .btn-secondary {
           background: transparent;
           color: var(--accent-primary);
           border: 2px solid var(--accent-primary);
         }
-
         .btn-secondary:hover {
           background: var(--accent-primary);
           color: var(--bg-primary);
         }
-
         .btn-outline {
           background: transparent;
           color: var(--text-primary);
           border: 2px solid var(--border-color);
         }
-
         .btn-outline:hover {
           background: var(--bg-card);
           border-color: var(--accent-primary);
         }
-
         section {
           padding: 5rem 0;
         }
-
         .section-header {
           text-align: center;
           margin-bottom: 3rem;
         }
-
         .section-title {
           font-size: 2.5rem;
           font-weight: 700;
@@ -815,24 +717,20 @@ export default function Home() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
-
         .section-subtitle {
           font-size: 1.125rem;
           color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto;
         }
-
         .features {
           background: var(--bg-secondary);
         }
-
         .features-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
           gap: 2rem;
         }
-
         .feature-card {
           background: var(--bg-card);
           padding: 2rem;
@@ -842,7 +740,6 @@ export default function Home() {
           position: relative;
           overflow: hidden;
         }
-
         .feature-card::before {
           content: '';
           position: absolute;
@@ -854,17 +751,14 @@ export default function Home() {
           transform: scaleX(0);
           transition: transform var(--transition-base);
         }
-
         .feature-card:hover::before {
           transform: scaleX(1);
         }
-
         .feature-card:hover {
           transform: translateY(-5px);
           box-shadow: var(--shadow-lg);
           border-color: var(--accent-primary);
         }
-
         .feature-icon {
           width: 60px;
           height: 60px;
@@ -876,119 +770,28 @@ export default function Home() {
           margin-bottom: 1.5rem;
           color: var(--bg-primary);
         }
-
         .feature-icon svg {
           width: 30px;
           height: 30px;
         }
-
         .feature-title {
           font-size: 1.25rem;
           font-weight: 600;
           margin-bottom: 1rem;
           color: var(--text-primary);
         }
-
         .feature-description {
           color: var(--text-secondary);
           line-height: 1.6;
         }
-
-        .architecture {
-          background: var(--bg-primary);
-        }
-
-        .architecture-content {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 400px;
-        }
-
-        .architecture-diagram {
-          position: relative;
-          width: 100%;
-          max-width: 800px;
-          height: 400px;
-        }
-
-        .arch-component {
-          position: absolute;
-          background: var(--bg-card);
-          border: 2px solid var(--accent-primary);
-          border-radius: var(--border-radius-lg);
-          padding: 1.5rem;
-          width: 250px;
-          text-align: center;
-          transition: all var(--transition-base);
-        }
-
-        .arch-component:hover {
-          transform: scale(1.05);
-          box-shadow: var(--shadow-lg);
-        }
-
-        .arch-core {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: var(--accent-gradient);
-          color: var(--bg-primary);
-        }
-
-        .arch-updates {
-          top: 20%;
-          left: 10%;
-        }
-
-        .arch-network {
-          top: 20%;
-          right: 10%;
-        }
-
-        .arch-connections {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          pointer-events: none;
-        }
-
-        .arch-connections::before,
-        .arch-connections::after {
-          content: '';
-          position: absolute;
-          background: var(--accent-secondary);
-          opacity: 0.3;
-        }
-
-        .arch-connections::before {
-          top: 30%;
-          left: 25%;
-          width: 25%;
-          height: 2px;
-          transform: rotate(-30deg);
-        }
-
-        .arch-connections::after {
-          top: 30%;
-          right: 25%;
-          width: 25%;
-          height: 2px;
-          transform: rotate(30deg);
-        }
-
         .how-it-works {
           background: var(--bg-secondary);
         }
-
         .steps-container {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           gap: 2rem;
         }
-
         .step {
           display: flex;
           gap: 1.5rem;
@@ -999,13 +802,11 @@ export default function Home() {
           border: 1px solid var(--border-color);
           transition: all var(--transition-base);
         }
-
         .step:hover {
           transform: translateY(-3px);
           box-shadow: var(--shadow-md);
           border-color: var(--accent-primary);
         }
-
         .step-number {
           width: 40px;
           height: 40px;
@@ -1018,29 +819,24 @@ export default function Home() {
           font-weight: 700;
           flex-shrink: 0;
         }
-
         .step-content h4 {
           font-size: 1.125rem;
           margin-bottom: 0.5rem;
           color: var(--text-primary);
         }
-
         .step-content p {
           color: var(--text-secondary);
           font-size: 0.875rem;
           margin: 0;
         }
-
         .use-cases {
           background: var(--bg-primary);
         }
-
         .use-cases-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 2rem;
         }
-
         .use-case {
           background: var(--bg-card);
           padding: 2rem;
@@ -1049,13 +845,11 @@ export default function Home() {
           text-align: center;
           transition: all var(--transition-base);
         }
-
         .use-case:hover {
           transform: translateY(-5px);
           box-shadow: var(--shadow-lg);
           border-color: var(--accent-primary);
         }
-
         .use-case-icon {
           width: 80px;
           height: 80px;
@@ -1067,27 +861,22 @@ export default function Home() {
           margin: 0 auto 1.5rem;
           color: var(--bg-primary);
         }
-
         .use-case-icon svg {
           width: 40px;
           height: 40px;
         }
-
         .use-case h4 {
           font-size: 1.25rem;
           margin-bottom: 1rem;
           color: var(--text-primary);
         }
-
         .use-case p {
           color: var(--text-secondary);
           font-size: 0.875rem;
         }
-
         .pricing {
           background: var(--bg-secondary);
         }
-
         .pricing-cards {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1095,7 +884,6 @@ export default function Home() {
           max-width: 800px;
           margin: 0 auto;
         }
-
         .pricing-card {
           background: var(--bg-card);
           border-radius: var(--border-radius-xl);
@@ -1104,17 +892,14 @@ export default function Home() {
           transition: all var(--transition-base);
           position: relative;
         }
-
         .pricing-card:hover {
           transform: translateY(-5px);
           box-shadow: var(--shadow-xl);
         }
-
         .pricing-featured {
           border-color: var(--accent-primary);
           transform: scale(1.05);
         }
-
         .pricing-badge {
           position: absolute;
           top: 15px;
@@ -1126,41 +911,34 @@ export default function Home() {
           font-weight: 600;
           transform: rotate(45deg);
         }
-
         .pricing-header {
           padding: 2rem;
           text-align: center;
           border-bottom: 1px solid var(--border-color);
         }
-
         .pricing-header h3 {
           font-size: 1.5rem;
           margin-bottom: 1rem;
           color: var(--text-primary);
         }
-
         .pricing-price {
           font-size: 3rem;
           font-weight: 800;
           color: var(--accent-primary);
           margin-bottom: 0.5rem;
         }
-
         .price-currency {
           font-size: 1.5rem;
           vertical-align: super;
         }
-
         .price-period {
           font-size: 1rem;
           color: var(--text-secondary);
         }
-
         .pricing-features {
           padding: 2rem;
           list-style: none;
         }
-
         .pricing-features li {
           padding: 0.75rem 0;
           border-bottom: 1px solid var(--border-color);
@@ -1168,7 +946,6 @@ export default function Home() {
           position: relative;
           padding-left: 1.5rem;
         }
-
         .pricing-features li::before {
           content: '✓';
           position: absolute;
@@ -1176,16 +953,13 @@ export default function Home() {
           color: var(--accent-primary);
           font-weight: bold;
         }
-
         .pricing-card .btn {
           margin: 0 2rem 2rem;
           width: calc(100% - 4rem);
         }
-
         .comparison {
           background: var(--bg-primary);
         }
-
         .comparison-table {
           max-width: 800px;
           margin: 0 auto;
@@ -1193,7 +967,6 @@ export default function Home() {
           overflow: hidden;
           border: 1px solid var(--border-color);
         }
-
         .comparison-row {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
@@ -1201,21 +974,17 @@ export default function Home() {
           padding: 1rem 1.5rem;
           border-bottom: 1px solid var(--border-color);
         }
-
         .comparison-row:last-child {
           border-bottom: none;
         }
-
         .comparison-header {
           background: var(--bg-card);
           font-weight: 600;
           color: var(--text-primary);
         }
-
         .comparison-feature {
           color: var(--text-secondary);
         }
-
         .comparison-apadana {
           display: flex;
           align-items: center;
@@ -1223,36 +992,30 @@ export default function Home() {
           color: var(--accent-primary);
           font-weight: 500;
         }
-
         .comparison-traditional {
           display: flex;
           align-items: center;
           gap: 0.5rem;
           color: var(--text-muted);
         }
-
         .check-icon {
           width: 20px;
           height: 20px;
           color: #10b981;
         }
-
         .x-icon {
           width: 20px;
           height: 20px;
           color: #ef4444;
         }
-
         .tech-stack {
           background: var(--bg-secondary);
         }
-
         .tech-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           gap: 2rem;
         }
-
         .tech-item {
           background: var(--bg-card);
           padding: 2rem;
@@ -1260,90 +1023,37 @@ export default function Home() {
           border: 1px solid var(--border-color);
           transition: all var(--transition-base);
         }
-
         .tech-item:hover {
           transform: translateY(-3px);
           box-shadow: var(--shadow-md);
           border-color: var(--accent-primary);
         }
-
         .tech-item h4 {
           color: var(--accent-primary);
           margin-bottom: 1rem;
         }
-
         .tech-item p {
           color: var(--text-secondary);
           font-size: 0.875rem;
         }
-
         .about {
           background: var(--bg-primary);
         }
-
         .about-content {
           max-width: 800px;
           margin: 0 auto;
         }
-
         .about-text {
           margin-bottom: 3rem;
         }
-
         .about-text p {
           font-size: 1.125rem;
           line-height: 1.8;
           margin-bottom: 1.5rem;
         }
-
-        .team-section h3 {
-          text-align: center;
-          margin-bottom: 2rem;
-          color: var(--text-primary);
-        }
-
-        .team-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 2rem;
-        }
-
-        .team-member {
-          text-align: center;
-          padding: 1.5rem;
-          background: var(--bg-card);
-          border-radius: var(--border-radius-lg);
-          border: 1px solid var(--border-color);
-          transition: all var(--transition-base);
-        }
-
-        .team-member:hover {
-          transform: translateY(-3px);
-          box-shadow: var(--shadow-md);
-        }
-
-        .team-avatar {
-          width: 80px;
-          height: 80px;
-          background: var(--accent-gradient);
-          border-radius: 50%;
-          margin: 0 auto 1rem;
-        }
-
-        .team-member h4 {
-          color: var(--text-primary);
-          margin-bottom: 0.5rem;
-        }
-
-        .team-member p {
-          color: var(--text-secondary);
-          font-size: 0.875rem;
-        }
-
         .contact {
           background: var(--bg-secondary);
         }
-
         .contact-content {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -1351,25 +1061,21 @@ export default function Home() {
           max-width: 1000px;
           margin: 0 auto;
         }
-
         .contact-form {
           background: var(--bg-card);
           padding: 2rem;
           border-radius: var(--border-radius-lg);
           border: 1px solid var(--border-color);
         }
-
         .form-group {
           margin-bottom: 1.5rem;
         }
-
         .form-group label {
           display: block;
           margin-bottom: 0.5rem;
           color: var(--text-primary);
           font-weight: 500;
         }
-
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -1382,7 +1088,6 @@ export default function Home() {
           font-family: inherit;
           transition: all var(--transition-fast);
         }
-
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
@@ -1390,19 +1095,16 @@ export default function Home() {
           border-color: var(--accent-primary);
           box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
         }
-
         .contact-info {
           display: flex;
           flex-direction: column;
           gap: 2rem;
         }
-
         .contact-item {
           display: flex;
           gap: 1rem;
           align-items: flex-start;
         }
-
         .contact-icon {
           width: 40px;
           height: 40px;
@@ -1414,32 +1116,26 @@ export default function Home() {
           color: var(--bg-primary);
           flex-shrink: 0;
         }
-
         .contact-icon svg {
           width: 20px;
           height: 20px;
         }
-
         .contact-item h4 {
           color: var(--text-primary);
           margin-bottom: 0.25rem;
         }
-
         .contact-item p {
           color: var(--text-secondary);
           margin: 0;
         }
-
         .social-links h4 {
           color: var(--text-primary);
           margin-bottom: 1rem;
         }
-
         .social-icons {
           display: flex;
           gap: 1rem;
         }
-
         .social-icon {
           width: 40px;
           height: 40px;
@@ -1453,54 +1149,44 @@ export default function Home() {
           transition: all var(--transition-fast);
           text-decoration: none;
         }
-
         .social-icon:hover {
           background: var(--accent-primary);
           color: var(--bg-primary);
           border-color: var(--accent-primary);
         }
-
         .social-icon svg {
           width: 20px;
           height: 20px;
         }
-
         .footer {
           background: var(--bg-primary);
           border-top: 1px solid var(--border-color);
           padding: 3rem 0 1rem;
         }
-
         .footer-content {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           gap: 2rem;
           margin-bottom: 2rem;
         }
-
         .footer-section h4 {
           color: var(--text-primary);
           margin-bottom: 1rem;
         }
-
         .footer-section ul {
           list-style: none;
         }
-
         .footer-section li {
           margin-bottom: 0.5rem;
         }
-
         .footer-section a {
           color: var(--text-secondary);
           text-decoration: none;
           transition: color var(--transition-fast);
         }
-
         .footer-section a:hover {
           color: var(--accent-primary);
         }
-
         .footer-bottom {
           display: flex;
           justify-content: space-between;
@@ -1508,13 +1194,11 @@ export default function Home() {
           padding-top: 2rem;
           border-top: 1px solid var(--border-color);
         }
-
         .footer-copyright p {
           color: var(--text-muted);
           margin: 0;
           font-size: 0.875rem;
         }
-
         .lang-switcher-footer {
           background: var(--bg-card);
           border: 1px solid var(--border-color);
@@ -1525,12 +1209,10 @@ export default function Home() {
           transition: all var(--transition-fast);
           font-weight: 500;
         }
-
         .lang-switcher-footer:hover {
           background: var(--bg-hover);
           border-color: var(--accent-primary);
         }
-
         @media (max-width: 768px) {
           .nav-menu {
             display: none;
@@ -1543,188 +1225,130 @@ export default function Home() {
             padding: 1rem;
             box-shadow: var(--shadow-lg);
           }
-
           .nav-menu.active {
             display: flex;
           }
-
           .mobile-menu-toggle {
             display: flex;
           }
-
           .mobile-menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
           }
-
           .mobile-menu-toggle.active span:nth-child(2) {
             opacity: 0;
           }
-
           .mobile-menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
           }
-
           .hero-container {
             grid-template-columns: 1fr;
             text-align: center;
             gap: 2rem;
           }
-
           .hero-title {
             font-size: 2.5rem;
           }
-
           .hero-illustration {
             width: 300px;
             height: 300px;
           }
-
           .hero-actions {
             justify-content: center;
           }
-
           .features-grid {
             grid-template-columns: 1fr;
           }
-
-          .architecture-diagram {
-            height: 600px;
-          }
-
-          .arch-component {
-            position: relative;
-            width: 100%;
-            margin-bottom: 1rem;
-          }
-
-          .arch-core {
-            transform: none;
-          }
-
-          .arch-updates,
-          .arch-network {
-            position: relative;
-            top: auto;
-            left: auto;
-            right: auto;
-          }
-
           .steps-container {
             grid-template-columns: 1fr;
           }
-
           .use-cases-grid {
             grid-template-columns: 1fr;
           }
-
           .pricing-cards {
             grid-template-columns: 1fr;
           }
-
           .pricing-featured {
             transform: none;
           }
-
           .comparison-row {
             grid-template-columns: 1fr;
             gap: 0.5rem;
           }
-
           .comparison-row > div {
             padding: 0.5rem 0;
           }
-
           .tech-grid {
             grid-template-columns: 1fr;
           }
-
           .contact-content {
             grid-template-columns: 1fr;
             gap: 2rem;
           }
-
           .footer-content {
             grid-template-columns: 1fr;
           }
-
           .footer-bottom {
             flex-direction: column;
             gap: 1rem;
             text-align: center;
           }
-
           h1 { font-size: 2.5rem; }
           h2 { font-size: 2rem; }
           h3 { font-size: 1.5rem; }
         }
-
         @media (max-width: 480px) {
           .container {
             padding: 0 15px;
           }
-
           .hero-title {
             font-size: 2rem;
           }
-
           .hero-subtitle {
             font-size: 1rem;
           }
-
           .section-title {
             font-size: 1.75rem;
           }
-
           .hero-illustration {
             width: 250px;
             height: 250px;
           }
-
           .illustration-core {
             width: 80px;
             height: 80px;
           }
-
           .illustration-nodes::before,
           .illustration-nodes::after {
             width: 30px;
             height: 30px;
           }
         }
-
         body[dir="rtl"] .nav-menu {
           left: auto;
           right: 0;
         }
-
         body[dir="rtl"] .hero-container {
           grid-template-columns: 1fr;
         }
-
         body[dir="rtl"] .step {
           flex-direction: row-reverse;
         }
-
         body[dir="rtl"] .pricing-features li {
           padding-left: 0;
           padding-right: 1.5rem;
         }
-
         body[dir="rtl"] .pricing-features li::before {
           left: auto;
           right: 0;
         }
-
         body[dir="rtl"] .comparison-apadana,
         body[dir="rtl"] .comparison-traditional {
           flex-direction: row-reverse;
         }
-
         body[dir="rtl"] .contact-item {
           flex-direction: row-reverse;
         }
       `}</style>
-
       {/* Header Navigation */}
       <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav">
@@ -1732,16 +1356,15 @@ export default function Home() {
             <div className="nav-brand">
               <div className="logo">APADANA</div>
             </div>
-            
+           
             <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
               <a href="#home" className="nav-link">{t('nav_home')}</a>
               <a href="#features" className="nav-link">{t('nav_features')}</a>
-              <a href="#architecture" className="nav-link">{t('nav_architecture')}</a>
               <a href="#pricing" className="nav-link">{t('nav_pricing')}</a>
               <a href="#about" className="nav-link">{t('nav_about')}</a>
               <a href="#contact" className="nav-link">{t('nav_contact')}</a>
             </div>
-            
+           
             <div className="nav-actions">
               <button className="lang-switcher" onClick={toggleLanguage}>
                 {currentLang.toUpperCase()}
@@ -1755,7 +1378,6 @@ export default function Home() {
           </div>
         </nav>
       </header>
-
       {/* Hero Section */}
       <section className="hero" id="home">
         <div className="hero-bg">
@@ -1780,7 +1402,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Features Overview Section */}
       <section className="features" id="features">
         <div className="container">
@@ -1788,7 +1409,7 @@ export default function Home() {
             <h2 className="section-title">{t('features_title')}</h2>
             <p className="section-subtitle">{t('features_subtitle')}</p>
           </div>
-          
+         
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">
@@ -1799,7 +1420,7 @@ export default function Home() {
               <h3 className="feature-title">{t('feature1_title')}</h3>
               <p className="feature-description">{t('feature1_desc')}</p>
             </div>
-            
+           
             <div className="feature-card">
               <div className="feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1809,7 +1430,7 @@ export default function Home() {
               <h3 className="feature-title">{t('feature2_title')}</h3>
               <p className="feature-description">{t('feature2_desc')}</p>
             </div>
-            
+           
             <div className="feature-card">
               <div className="feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1819,7 +1440,7 @@ export default function Home() {
               <h3 className="feature-title">{t('feature3_title')}</h3>
               <p className="feature-description">{t('feature3_desc')}</p>
             </div>
-            
+           
             <div className="feature-card">
               <div className="feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1829,7 +1450,7 @@ export default function Home() {
               <h3 className="feature-title">{t('feature4_title')}</h3>
               <p className="feature-description">{t('feature4_desc')}</p>
             </div>
-            
+           
             <div className="feature-card">
               <div className="feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1839,7 +1460,7 @@ export default function Home() {
               <h3 className="feature-title">{t('feature5_title')}</h3>
               <p className="feature-description">{t('feature5_desc')}</p>
             </div>
-            
+           
             <div className="feature-card">
               <div className="feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1852,35 +1473,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Architecture Deep Dive Section */}
-      <section className="architecture" id="architecture">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">{t('architecture_title')}</h2>
-            <p className="section-subtitle">{t('architecture_subtitle')}</p>
-          </div>
-          
-          <div className="architecture-content">
-            <div className="architecture-diagram">
-              <div className="arch-component arch-core">
-                <h4>{t('arch_core_title')}</h4>
-                <p>{t('arch_core_desc')}</p>
-              </div>
-              <div className="arch-component arch-updates">
-                <h4>{t('arch_updates_title')}</h4>
-                <p>{t('arch_updates_desc')}</p>
-              </div>
-              <div className="arch-component arch-network">
-                <h4>{t('arch_network_title')}</h4>
-                <p>{t('arch_network_desc')}</p>
-              </div>
-              <div className="arch-connections"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* How It Works Section */}
       <section className="how-it-works">
         <div className="container">
@@ -1888,7 +1480,7 @@ export default function Home() {
             <h2 className="section-title">{t('how_title')}</h2>
             <p className="section-subtitle">{t('how_subtitle')}</p>
           </div>
-          
+         
           <div className="steps-container">
             <div className="step">
               <div className="step-number">1</div>
@@ -1897,7 +1489,7 @@ export default function Home() {
                 <p>{t('step1_desc')}</p>
               </div>
             </div>
-            
+           
             <div className="step">
               <div className="step-number">2</div>
               <div className="step-content">
@@ -1905,7 +1497,7 @@ export default function Home() {
                 <p>{t('step2_desc')}</p>
               </div>
             </div>
-            
+           
             <div className="step">
               <div className="step-number">3</div>
               <div className="step-content">
@@ -1913,7 +1505,7 @@ export default function Home() {
                 <p>{t('step3_desc')}</p>
               </div>
             </div>
-            
+           
             <div className="step">
               <div className="step-number">4</div>
               <div className="step-content">
@@ -1921,7 +1513,7 @@ export default function Home() {
                 <p>{t('step4_desc')}</p>
               </div>
             </div>
-            
+           
             <div className="step">
               <div className="step-number">5</div>
               <div className="step-content">
@@ -1929,7 +1521,7 @@ export default function Home() {
                 <p>{t('step5_desc')}</p>
               </div>
             </div>
-            
+           
             <div className="step">
               <div className="step-number">6</div>
               <div className="step-content">
@@ -1940,7 +1532,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Use Cases Section */}
       <section className="use-cases">
         <div className="container">
@@ -1948,7 +1539,7 @@ export default function Home() {
             <h2 className="section-title">{t('usecases_title')}</h2>
             <p className="section-subtitle">{t('usecases_subtitle')}</p>
           </div>
-          
+         
           <div className="use-cases-grid">
             <div className="use-case">
               <div className="use-case-icon">
@@ -1959,7 +1550,7 @@ export default function Home() {
               <h4>{t('usecase1_title')}</h4>
               <p>{t('usecase1_desc')}</p>
             </div>
-            
+           
             <div className="use-case">
               <div className="use-case-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1969,7 +1560,7 @@ export default function Home() {
               <h4>{t('usecase2_title')}</h4>
               <p>{t('usecase2_desc')}</p>
             </div>
-            
+           
             <div className="use-case">
               <div className="use-case-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1979,7 +1570,7 @@ export default function Home() {
               <h4>{t('usecase3_title')}</h4>
               <p>{t('usecase3_desc')}</p>
             </div>
-            
+           
             <div className="use-case">
               <div className="use-case-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1989,7 +1580,7 @@ export default function Home() {
               <h4>{t('usecase4_title')}</h4>
               <p>{t('usecase4_desc')}</p>
             </div>
-            
+           
             <div className="use-case">
               <div className="use-case-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -2002,7 +1593,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Pricing Section */}
       <section className="pricing" id="pricing">
         <div className="container">
@@ -2010,7 +1600,7 @@ export default function Home() {
             <h2 className="section-title">{t('pricing_title')}</h2>
             <p className="section-subtitle">{t('pricing_subtitle')}</p>
           </div>
-          
+         
           <div className="pricing-cards">
             <div className="pricing-card">
               <div className="pricing-header">
@@ -2029,7 +1619,7 @@ export default function Home() {
               </ul>
               <button className="btn btn-outline">{t('pricing_home_cta')}</button>
             </div>
-            
+           
             <div className="pricing-card pricing-featured">
               <div className="pricing-badge">{t('pricing_recommended')}</div>
               <div className="pricing-header">
@@ -2053,7 +1643,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Comparison Section */}
       <section className="comparison">
         <div className="container">
@@ -2061,14 +1650,14 @@ export default function Home() {
             <h2 className="section-title">{t('comparison_title')}</h2>
             <p className="section-subtitle">{t('comparison_subtitle')}</p>
           </div>
-          
+         
           <div className="comparison-table">
             <div className="comparison-row comparison-header">
               <div className="comparison-feature">{t('comparison_feature')}</div>
               <div className="comparison-apadana">Apadana</div>
               <div className="comparison-traditional">{t('comparison_traditional')}</div>
             </div>
-            
+           
             <div className="comparison-row">
               <div className="comparison-feature">{t('comparison_cost')}</div>
               <div className="comparison-apadana">
@@ -2084,7 +1673,7 @@ export default function Home() {
                 <span>{t('comparison_high')}</span>
               </div>
             </div>
-            
+           
             <div className="comparison-row">
               <div className="comparison-feature">{t('comparison_security')}</div>
               <div className="comparison-apadana">
@@ -2100,7 +1689,7 @@ export default function Home() {
                 <span>{t('comparison_addons')}</span>
               </div>
             </div>
-            
+           
             <div className="comparison-row">
               <div className="comparison-feature">{t('comparison_management')}</div>
               <div className="comparison-apadana">
@@ -2119,7 +1708,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Technology Stack Section */}
       <section className="tech-stack">
         <div className="container">
@@ -2127,33 +1715,33 @@ export default function Home() {
             <h2 className="section-title">{t('tech_title')}</h2>
             <p className="section-subtitle">{t('tech_subtitle')}</p>
           </div>
-          
+         
           <div className="tech-grid">
             <div className="tech-item">
               <h4>{t('tech_base_title')}</h4>
               <p>{t('tech_base_desc')}</p>
             </div>
-            
+           
             <div className="tech-item">
               <h4>{t('tech_repos_title')}</h4>
               <p>{t('tech_repos_desc')}</p>
             </div>
-            
+           
             <div className="tech-item">
               <h4>{t('tech_desktop_title')}</h4>
               <p>{t('tech_desktop_desc')}</p>
             </div>
-            
+           
             <div className="tech-item">
               <h4>{t('tech_compatibility_title')}</h4>
               <p>{t('tech_compatibility_desc')}</p>
             </div>
-            
+           
             <div className="tech-item">
               <h4>{t('tech_optimization_title')}</h4>
               <p>{t('tech_optimization_desc')}</p>
             </div>
-            
+           
             <div className="tech-item">
               <h4>{t('tech_management_title')}</h4>
               <p>{t('tech_management_desc')}</p>
@@ -2161,7 +1749,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* About Section */}
       <section className="about" id="about">
         <div className="container">
@@ -2169,42 +1756,15 @@ export default function Home() {
             <h2 className="section-title">{t('about_title')}</h2>
             <p className="section-subtitle">{t('about_subtitle')}</p>
           </div>
-          
+         
           <div className="about-content">
             <div className="about-text">
               <p>{t('about_mission')}</p>
               <p>{t('about_vision')}</p>
             </div>
-            
-            <div className="team-section">
-              <h3>{t('team_title')}</h3>
-              <div className="team-grid">
-                <div className="team-member">
-                  <div className="team-avatar"></div>
-                  <h4>{t('team_role1')}</h4>
-                  <p>{t('team_desc1')}</p>
-                </div>
-                <div className="team-member">
-                  <div className="team-avatar"></div>
-                  <h4>{t('team_role2')}</h4>
-                  <p>{t('team_desc2')}</p>
-                </div>
-                <div className="team-member">
-                  <div className="team-avatar"></div>
-                  <h4>{t('team_role3')}</h4>
-                  <p>{t('team_desc3')}</p>
-                </div>
-                <div className="team-member">
-                  <div className="team-avatar"></div>
-                  <h4>{t('team_role4')}</h4>
-                  <p>{t('team_desc4')}</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section className="contact" id="contact">
         <div className="container">
@@ -2212,7 +1772,7 @@ export default function Home() {
             <h2 className="section-title">{t('contact_title')}</h2>
             <p className="section-subtitle">{t('contact_subtitle')}</p>
           </div>
-          
+         
           <div className="contact-content">
             <div className="contact-form">
               <form>
@@ -2220,22 +1780,22 @@ export default function Home() {
                   <label>{t('contact_name')}</label>
                   <input type="text" required />
                 </div>
-                
+               
                 <div className="form-group">
                   <label>{t('contact_email')}</label>
                   <input type="email" required />
                 </div>
-                
+               
                 <div className="form-group">
                   <label>{t('contact_org')}</label>
                   <input type="text" />
                 </div>
-                
+               
                 <div className="form-group">
                   <label>{t('contact_message')}</label>
                   <textarea rows="5" required></textarea>
                 </div>
-                
+               
                 <div className="form-group">
                   <label>{t('contact_lang')}</label>
                   <select>
@@ -2243,11 +1803,11 @@ export default function Home() {
                     <option value="fa">فارسی</option>
                   </select>
                 </div>
-                
+               
                 <button type="submit" className="btn btn-primary">{t('contact_submit')}</button>
               </form>
             </div>
-            
+           
             <div className="contact-info">
               <div className="contact-item">
                 <div className="contact-icon">
@@ -2257,10 +1817,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h4>{t('contact_email_title')}</h4>
-                  <p>info@apadana-linux.org</p>
+                  <p>apadanalinux@gmail.com</p>
                 </div>
               </div>
-              
+             
               <div className="contact-item">
                 <div className="contact-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -2272,20 +1832,7 @@ export default function Home() {
                   <p>+1 (555) 123-4567</p>
                 </div>
               </div>
-              
-              <div className="contact-item">
-                <div className="contact-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h4>{t('contact_address_title')}</h4>
-                  <p>123 Tech Street<br />Silicon Valley, CA 94025</p>
-                </div>
-              </div>
-              
+             
               <div className="social-links">
                 <h4>{t('contact_follow')}</h4>
                 <div className="social-icons">
@@ -2316,7 +1863,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="footer">
         <div className="container">
@@ -2330,7 +1876,7 @@ export default function Home() {
                 <li><a href="#">{t('footer_partners')}</a></li>
               </ul>
             </div>
-            
+           
             <div className="footer-section">
               <h4>{t('footer_resources')}</h4>
               <ul>
@@ -2340,7 +1886,7 @@ export default function Home() {
                 <li><a href="#">{t('footer_api')}</a></li>
               </ul>
             </div>
-            
+           
             <div className="footer-section">
               <h4>{t('footer_support')}</h4>
               <ul>
@@ -2350,7 +1896,7 @@ export default function Home() {
                 <li><a href="#">{t('footer_feedback')}</a></li>
               </ul>
             </div>
-            
+           
             <div className="footer-section">
               <h4>{t('footer_legal')}</h4>
               <ul>
@@ -2361,7 +1907,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          
+         
           <div className="footer-bottom">
             <div className="footer-lang">
               <button className="lang-switcher-footer" onClick={toggleLanguage}>
@@ -2369,7 +1915,7 @@ export default function Home() {
               </button>
             </div>
             <div className="footer-copyright">
-              <p>&copy; 2024 Apadana Linux. {t('footer_rights')}</p>
+              <p>&copy; 1404 / 2025 Apadana Linux. {t('footer_rights')}</p>
             </div>
           </div>
         </div>

@@ -13,27 +13,43 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import type { Metadata } from "next";
+
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
-  icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
-  },
+  title: "Apadana Linux",
+  description:
+    "Apadana Linux is a modern GNU/Linux distribution based on Parch Linux, focused on simplicity, performance, and user control.",
+  keywords: [
+    "Apadana Linux",
+    "Parch Linux",
+    "Arch Linux based",
+    "GNU/Linux",
+    "Linux distribution",
+    "Open Source",
+    "FOSS",
+    "Linux desktop",
+    "Free Software",
+  ],
+  authors: [{ name: "Apadana Linux Team" }],
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Apadana Linux",
+    description:
+      "A modern GNU/Linux distribution based on Parch Linux, built for simplicity, performance, and freedom.",
+    url: "https://apadanalinux.org",
+    siteName: "Apadana Linux",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Apadana Linux",
+    description:
+      "A modern GNU/Linux distribution based on Parch Linux, focused on performance and user freedom.",
   },
 };
+
+
 
 export default function RootLayout({
   children,
