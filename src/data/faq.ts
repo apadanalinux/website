@@ -251,7 +251,7 @@ export const faqList: FaqItem[] = [
       en: 'Which languages are supported in addition to Persian?',
     },
     a: {
-      fa: 'آپادانا بر پایه‌ی کیدیای پلاسما ساخته شده و از تمام زبان‌هایی که این محیط دسکتاپ پشتیبانی می‌کند بهره می‌برد، با این تفاوت که فارسی به‌عنوان زبان اصلی و اولویت‌دار توسعه و بومی‌سازی در نظر گرفته شده است.',
+      fa: 'آپادانا بر پایه‌ی کی دی ای پلاسما ساخته شده و از تمام زبان‌هایی که این محیط دسکتاپ پشتیبانی می‌کند بهره می‌برد، با این تفاوت که فارسی به‌عنوان زبان اصلی و اولویت‌دار توسعه و بومی‌سازی در نظر گرفته شده است.',
       en: 'Apadana is built upon KDE Plasma and inherits all languages supported by the KDE ecosystem, with Persian designated as the primary first-class citizen for all localization, typography, and regional ergonomic development.',
     },
   },
