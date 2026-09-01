@@ -40,11 +40,63 @@ const getCleanDocSlug = (slug: string) => {
   description={doc.data.description}
   lang={lang}
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
+    
+    <!-- Mobile Documentation Navigation Menu (Collapsed by default, never sticky/overlapping) -->
+    <div class="block lg:hidden mb-6">
+      <details class="enterprise-card rounded-lg border border-white/10 overflow-hidden group">
+        <summary class="p-3.5 flex items-center justify-between cursor-pointer select-none bg-secondary/60 hover:bg-secondary transition-colors text-xs font-semibold text-white">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-parch-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+            <span>{isFa ? 'فهرست بخش‌های مستندات' : 'Documentation Menu'}:</span>
+            <span class="text-parch-teal font-normal truncate max-w-[180px]">{doc.data.title}</span>
+          </div>
+          <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        
+        <div class="p-4 space-y-4 text-xs border-t border-white/5 bg-[#070e1b]">
+          {sections.map((section) => {
+            const sectionDocs = currentLangDocs.filter((d) => d.data.section === section);
+            return (
+              <div class="space-y-1.5">
+                <div class="font-semibold text-slate-300 px-2 py-1 bg-secondary rounded border border-white/5">
+                  {section}
+                </div>
+                <ul class="space-y-0.5 ps-1">
+                  {sectionDocs.map((item) => {
+                    const cleanSlug = getCleanDocSlug(item.slug);
+                    const isCurrent = item.slug === doc.slug;
+                    return (
+                      <li>
+                        <a
+                          href={`/${lang}/docs/${cleanSlug}`}
+                          class={`block px-2.5 py-1.5 rounded transition-colors leading-relaxed ${
+                            isCurrent
+                              ? 'bg-secondary text-parch-teal font-semibold border-s-2 border-parch-teal'
+                              : 'text-slate-400 hover:text-white hover:bg-white/5'
+                          }`}
+                        >
+                          {item.data.title}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </details>
+    </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
-      <!-- Left Sidebar (3 cols) -->
-      <aside class="lg:col-span-3 sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2 pb-8">
+      <!-- Desktop Sidebar (3 cols - Only sticky and visible on lg screens) -->
+      <aside class="hidden lg:block lg:col-span-3 sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2 pb-8">
         <div class="enterprise-card rounded-lg p-4 border border-white/10 space-y-5">
           <div class="flex items-center justify-between border-b border-white/10 pb-3">
             <h3 class="font-bold text-xs uppercase tracking-wider text-slate-300">
@@ -90,21 +142,21 @@ const getCleanDocSlug = (slug: string) => {
         </div>
       </aside>
 
-      <!-- Main Doc Content (6 cols) -->
-      <article class="lg:col-span-6 enterprise-card rounded-lg p-6 sm:p-8 border border-white/10 shadow-lg space-y-6">
+      <!-- Main Doc Content (min-w-0 for mobile overflow protection) -->
+      <article class="col-span-1 lg:col-span-6 min-w-0 w-full enterprise-card rounded-lg p-5 sm:p-8 border border-white/10 shadow-lg space-y-6">
         
         <!-- Breadcrumbs -->
-        <nav class="flex items-center gap-2 text-xs text-slate-400 border-b border-white/10 pb-3">
-          <a href={`/${lang}/`} class="hover:text-white transition-colors">{t('nav.home')}</a>
+        <nav class="flex items-center gap-2 text-xs text-slate-400 border-b border-white/10 pb-3 overflow-x-auto">
+          <a href={`/${lang}/`} class="hover:text-white transition-colors shrink-0">{t('nav.home')}</a>
           <span>/</span>
-          <a href={`/${lang}/docs`} class="hover:text-white transition-colors">{t('nav.docs')}</a>
+          <a href={`/${lang}/docs`} class="hover:text-white transition-colors shrink-0">{t('nav.docs')}</a>
           <span>/</span>
-          <span class="text-slate-300">{doc.data.section}</span>
+          <span class="text-slate-300 truncate">{doc.data.section}</span>
         </nav>
 
         <!-- Document Heading -->
         <div class="space-y-2">
-          <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
             {doc.data.title}
           </h1>
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
@@ -113,7 +165,7 @@ const getCleanDocSlug = (slug: string) => {
         </div>
 
         <!-- Markdown Body -->
-        <div class="prose prose-invert max-w-none text-sm sm:text-base leading-relaxed font-light">
+        <div class="prose prose-invert max-w-none text-sm sm:text-base leading-relaxed font-light overflow-hidden">
           <slot />
         </div>
 
@@ -156,7 +208,7 @@ const getCleanDocSlug = (slug: string) => {
 
       </article>
 
-      <!-- Right Table of Contents (3 cols) -->
+      <!-- Right Table of Contents (3 cols - Only on lg screens) -->
       <aside class="hidden lg:block lg:col-span-3 sticky top-24 space-y-5">
         {headings.filter(h => h.depth <= 3).length > 0 && (
           <div class="enterprise-card rounded-lg p-4 border border-white/10 space-y-3">

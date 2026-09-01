@@ -6,7 +6,7 @@ author: "Apadana Core Team"
 authorRole: "Infrastructure Architecture"
 tags: ["Parch Linux", "Open Source", "Community", "Collaboration"]
 lang: "en"
-externalUrl: "https://blog.parchlinux.com"
+externalUrl: "https://parchlinux.com/blog"
 ---
 
 Open source software thrives on symbiotic relationships between community projects and enterprise platforms.

@@ -6,7 +6,7 @@ author: "تیم هسته آپادانا"
 authorRole: "توسعه زیرساخت"
 tags: ["پارچ لینوکس", "متن‌باز", "جامعه", "توسعه مشترک"]
 lang: "fa"
-externalUrl: "https://blog.parchlinux.com"
+externalUrl: "https://parchlinux.com/blog"
 ---
 
 مدل توسعه نرم‌افزار آزاد بر پایه جریان دوطرفه نوآوری استوار است. در دنیای آپادانا و پارچ لینوکس:
