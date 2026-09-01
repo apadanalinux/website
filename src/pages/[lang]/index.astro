@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/home/HeroSection.astro';
+import DecisionMakersSection from '../../components/home/DecisionMakersSection.astro';
+import TechnicalDeepDiveSection from '../../components/home/TechnicalDeepDiveSection.astro';
+import KdeLocalizationSection from '../../components/home/KdeLocalizationSection.astro';
+import EnterprisePillarsSection from '../../components/home/EnterprisePillarsSection.astro';
+import ComparisonSection from '../../components/home/ComparisonSection.astro';
+import RelationshipCalloutSection from '../../components/home/RelationshipCalloutSection.astro';
+import CtaBannerSection from '../../components/home/CtaBannerSection.astro';
+import { useTranslations } from '../../i18n/utils';
+import type { Locale } from '../../i18n/translations';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'fa' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Locale };
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title={t('site.title')}
+  description={t('site.description')}
+  lang={lang}
+>
+  <HeroSection lang={lang} />
+  <DecisionMakersSection lang={lang} />
+  <TechnicalDeepDiveSection lang={lang} />
+  <KdeLocalizationSection lang={lang} />
+  <EnterprisePillarsSection lang={lang} />
+  <ComparisonSection lang={lang} />
+  <RelationshipCalloutSection lang={lang} />
+  <CtaBannerSection lang={lang} />
+</BaseLayout>

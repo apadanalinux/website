@@ -1,0 +1,127 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { useTranslations, isRTL } from '../i18n/utils';
+import type { Locale } from '../i18n/translations';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  lang: Locale;
+}
+
+const { post, lang } = Astro.props;
+const t = useTranslations(lang);
+const rtl = isRTL(lang);
+const isFa = lang === 'fa';
+
+const formattedDate = new Intl.DateTimeFormat(isFa ? 'fa-IR' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(post.data.pubDate);
+---
+
+<BaseLayout
+  title={`${post.data.title} | ${t('blog.title')}`}
+  description={post.data.description}
+  lang={lang}
+>
+  <div class="py-12 lg:py-16 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <!-- Back to Blog Link -->
+      <div>
+        <a
+          href={`/${lang}/blog`}
+          class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-parch-teal transition-colors"
+        >
+          <span class={rtl ? 'rotate-180' : ''}>←</span>
+          <span>{isFa ? 'بازگشت به آرشیو وبلاگ' : 'Back to Blog'}</span>
+        </a>
+      </div>
+
+      <!-- Article Header -->
+      <header class="enterprise-card rounded-lg p-6 sm:p-8 border border-white/10 space-y-5">
+        <div class="flex flex-wrap items-center gap-2">
+          {post.data.tags.map((tag) => (
+            <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-secondary text-parch-teal border border-white/10">
+              #{tag}
+            </span>
+          ))}
+        </div>
+
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          {post.data.title}
+        </h1>
+
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+          {post.data.description}
+        </p>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10 text-xs text-slate-400">
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded bg-parch flex items-center justify-center text-white font-bold text-xs">
+              {post.data.author.charAt(0)}
+            </div>
+            <div>
+              <div class="font-bold text-white">{post.data.author}</div>
+              {post.data.authorRole && (
+                <div class="text-[11px] text-slate-400 font-light">{post.data.authorRole}</div>
+              )}
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div>
+              <span>{t('blog.published_on')}: </span>
+              <span class="text-slate-200 font-medium">{formattedDate}</span>
+            </div>
+          </div>
+        </div>
+
+        {post.data.externalUrl && (
+          <div class="p-3.5 rounded bg-secondary border border-white/10 flex items-center justify-between text-xs">
+            <span class="text-slate-400">
+              {isFa ? 'این مقاله در ارتباط با جامعه پارچ لینوکس است' : 'This article references the Parch Linux community'}
+            </span>
+            <a
+              href={post.data.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-parch-teal hover:underline font-semibold inline-flex items-center gap-1"
+            >
+              <span>{t('blog.parch_blog_link')}</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        )}
+      </header>
+
+      <!-- Article Content -->
+      <article class="enterprise-card rounded-lg p-6 sm:p-8 border border-white/10 shadow-lg prose prose-invert max-w-none text-sm sm:text-base leading-relaxed font-light">
+        <slot />
+      </article>
+
+      <!-- Footer Callout -->
+      <div class="rounded-lg p-6 enterprise-card border border-parch-teal/30 bg-[#071322] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="space-y-1 text-center sm:text-start">
+          <div class="font-bold text-white text-sm">
+            {isFa ? 'علاقه‌مند به استقرار آپادانا در سازمان خود هستید؟' : 'Ready to deploy Apadana in your organization?'}
+          </div>
+          <div class="text-xs text-slate-300 font-light">
+            {isFa ? 'با تیم راهکارهای سازمانی ما مشاوره نمایید.' : 'Consult with our enterprise solutions architecture team.'}
+          </div>
+        </div>
+        <a
+          href={`/${lang}/contact`}
+          class="px-4 py-2 rounded-md font-semibold text-xs text-white bg-parch hover:opacity-95 transition-all shadow-sm whitespace-nowrap"
+        >
+          {t('nav.contact')}
+        </a>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

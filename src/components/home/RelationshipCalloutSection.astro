@@ -1,0 +1,130 @@
+---
+import { useTranslations, isRTL } from '../../i18n/utils';
+import type { Locale } from '../../i18n/translations';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const rtl = isRTL(lang);
+---
+
+<section class="py-16 bg-[#020917] border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+        {t('rel.title')}
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed font-light">
+        {t('rel.subtitle')}
+      </p>
+    </div>
+
+    <!-- 2 Side-by-Side Cards (Community vs Commercial) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      
+      <!-- Community Parch Card -->
+      <div class="rounded-lg bg-secondary p-6 sm:p-7 border border-white/10 space-y-4">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3.5">
+          <div class="flex items-center gap-3">
+            <img src="/logo-white.svg" alt="Parch Linux" class="w-6 h-6 object-contain" />
+            <div>
+              <h3 class="font-bold text-white text-base">{t('rel.community_title')}</h3>
+              <span class="text-[11px] text-slate-400">Open Source & Community Project</span>
+            </div>
+          </div>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0b1322] text-slate-300 border border-white/10">
+            Upstream
+          </span>
+        </div>
+
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-300 font-light">
+          <li class="flex items-start gap-2.5">
+            <span class="text-slate-500 mt-1">•</span>
+            <span>{t('rel.community_item1')}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-slate-500 mt-1">•</span>
+            <span>{t('rel.community_item2')}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-slate-500 mt-1">•</span>
+            <span>{t('rel.community_item3')}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-slate-500 mt-1">•</span>
+            <span>{t('rel.community_item4')}</span>
+          </li>
+        </ul>
+
+        <div class="pt-2">
+          <a
+            href="https://parchlinux.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-parch-teal transition-colors"
+          >
+            <span>{lang === 'fa' ? 'بازدید از وبگاه جامعه پارچ لینوکس' : 'Visit Parch Linux Community'}</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Commercial Apadana Card -->
+      <div class="rounded-lg bg-secondary p-6 sm:p-7 border border-parch-teal/30 space-y-4">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3.5">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded bg-parch flex items-center justify-center text-white font-bold text-xs">
+              A
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">{t('rel.commercial_title')}</h3>
+              <span class="text-[11px] text-parch-teal font-medium">Enterprise & Commercial Edition</span>
+            </div>
+          </div>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0b1322] text-parch-teal border border-white/10 font-bold">
+            Downstream LTS
+          </span>
+        </div>
+
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-200 font-light">
+          <li class="flex items-start gap-2.5">
+            <span class="text-parch-teal mt-1">✔</span>
+            <span>{t('rel.commercial_item1')}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-parch-teal mt-1">✔</span>
+            <span>{t('rel.commercial_item2')}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-parch-teal mt-1">✔</span>
+            <span>{t('rel.commercial_item3')}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-parch-teal mt-1">✔</span>
+            <span>{t('rel.commercial_item4')}</span>
+          </li>
+        </ul>
+
+        <div class="pt-2">
+          <a
+            href={`/${lang}/about-parch`}
+            class="inline-flex items-center gap-1.5 text-xs font-semibold text-parch-teal hover:underline transition-colors"
+          >
+            <span>{t('rel.cta')}</span>
+            <svg class={`w-3.5 h-3.5 ${rtl ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,105 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import type { Locale } from '../../i18n/translations';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const techItems = [
+  {
+    tag: 'OCI & Kernel',
+    title: t('tech.bootc_title'),
+    desc: t('tech.bootc_desc'),
+    code: `# Inspect active transactional image\nsudo bootc status\n# Staged upgrade with zero risk\nsudo bootc upgrade`,
+  },
+  {
+    tag: 'Desktop Sandboxing',
+    title: t('tech.flatpak_title'),
+    desc: t('tech.flatpak_desc'),
+    code: `# Isolated application installs\nflatpak install flathub org.libreoffice.LibreOffice\n# Granular permission sandbox active`,
+  },
+  {
+    tag: 'Dev & Legacy Tooling',
+    title: t('tech.distrobox_title'),
+    desc: t('tech.distrobox_desc'),
+    code: `# Launch isolated developer containers\ndistrobox create --name dev-box --image archlinux:latest\ndistrobox enter py-dev`,
+  },
+  {
+    tag: 'Mobile Workloads',
+    title: t('tech.waydroid_title'),
+    desc: t('tech.waydroid_desc'),
+    code: `# Hardware accelerated Android container\nwaydroid session start\n# Native window integration in Wayland`,
+  },
+];
+---
+
+<section id="architecture" class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+        {t('tech.title')}
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed font-light">
+        {t('tech.subtitle')}
+      </p>
+    </div>
+
+    <!-- 2x2 Grid with Technical Explanations & Snippets -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+      {techItems.map((item) => (
+        <div class="rounded-lg bg-secondary p-6 border border-white/10 flex flex-col justify-between hover:border-parch-teal/40 transition-colors">
+          <div>
+            <h3 class="text-base font-bold text-white mb-2">
+              {item.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light mb-4">
+              {item.desc}
+            </p>
+          </div>
+
+          <!-- Code Snippet Box -->
+          <div class="rounded bg-[#070e1b] border border-white/10 p-3 font-mono text-xs text-slate-300 overflow-x-auto" dir="ltr">
+            <pre class="text-[11px] text-slate-300 bg-transparent p-0 border-0 overflow-x-auto"><code>{item.code}</code></pre>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Architecture Visual Flow -->
+    <div class="mt-8 p-6 rounded-lg bg-secondary border border-white/10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+        
+        <div class="p-3.5 rounded bg-[#0b1322] border border-white/10">
+          <div class="text-xs font-mono text-slate-400 mb-0.5">Layer 01</div>
+          <div class="font-bold text-white text-sm">Base Kernel & Hardware</div>
+          <div class="text-[11px] text-slate-400 mt-1 font-light">Linux Kernel & OSTree</div>
+        </div>
+
+        <div class="p-3.5 rounded bg-[#0b1322] border border-parch-teal/40">
+          <div class="text-xs font-mono text-parch-teal mb-0.5">Layer 02</div>
+          <div class="font-bold text-white text-sm">bootc Immutable Root</div>
+          <div class="text-[11px] text-slate-400 mt-1 font-light">Read-Only OCI Image (/usr)</div>
+        </div>
+
+        <div class="p-3.5 rounded bg-[#0b1322] border border-white/10">
+          <div class="text-xs font-mono text-slate-400 mb-0.5">Layer 03</div>
+          <div class="font-bold text-white text-sm">Isolated Runtimes</div>
+          <div class="text-[11px] text-slate-400 mt-1 font-light">Flatpak, Distrobox & Waydroid</div>
+        </div>
+
+        <div class="p-3.5 rounded bg-[#0b1322] border border-white/10">
+          <div class="text-xs font-mono text-slate-400 mb-0.5">Layer 04</div>
+          <div class="font-bold text-white text-sm">Enterprise Desktop</div>
+          <div class="text-[11px] text-slate-400 mt-1 font-light">KDE Plasma 6 + Persian RTL</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

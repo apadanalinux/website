@@ -1,0 +1,78 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import type { Locale } from '../../i18n/translations';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const features = [
+  {
+    title: t('kde.feat1_title'),
+    desc: t('kde.feat1_desc'),
+  },
+  {
+    title: t('kde.feat2_title'),
+    desc: t('kde.feat2_desc'),
+  },
+  {
+    title: t('kde.feat3_title'),
+    desc: t('kde.feat3_desc'),
+  },
+  {
+    title: t('kde.feat4_title'),
+    desc: t('kde.feat4_desc'),
+  },
+];
+---
+
+<section id="kde-persian" class="py-16 bg-[#020917] border-t border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Text and Features (6 cols) -->
+      <div class="lg:col-span-6 space-y-4">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug">
+          {t('kde.title')}
+        </h2>
+        
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed font-light">
+          {t('kde.subtitle')}
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          {features.map((feat) => (
+            <div class="p-4 rounded-lg bg-secondary border border-white/10 space-y-1.5 hover:border-parch-teal/30 transition-colors">
+              <div class="flex items-center gap-2 text-parch-teal font-semibold text-xs sm:text-sm">
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{feat.title}</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed font-light">
+                {feat.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right Wallpaper Showcase (6 cols) -->
+      <div class="lg:col-span-6 flex justify-center">
+        <div class="rounded-2xl overflow-hidden border-4 border-[#1b2639] shadow-2xl w-full">
+          <img
+            src="/images/wallpaper 3.jpg"
+            alt="KDE Plasma Persian Desktop"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, isRTL } from '../../i18n/utils';
+import type { Locale } from '../../i18n/translations';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'fa' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Locale };
+const t = useTranslations(lang);
+const rtl = isRTL(lang);
+const isFa = lang === 'fa';
+---
+
+<BaseLayout
+  title={isFa ? 'ارتباط آپادانا و پارچ لینوکس | بنیاد مشترک و مأموریت‌ها' : 'Apadana & Parch Linux Relationship | Shared Foundation, Distinct Missions'}
+  description={isFa ? 'بررسی جامع رابطه میان پروژه جامعه‌محور پارچ لینوکس و نسخه تجاری-سازمانی آپادانا لینوکس.' : 'Comprehensive overview of the relationship between the community Parch Linux project and commercial Apadana Linux.'}
+  lang={lang}
+>
+  <div class="py-14 lg:py-20 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Page Header -->
+      <div class="text-center space-y-3 max-w-3xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          {t('rel_page.title')}
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed font-light">
+          {t('rel_page.desc')}
+        </p>
+      </div>
+
+      <!-- Overview Box -->
+      <div class="enterprise-card rounded-lg p-6 sm:p-8 border border-white/10 space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-white">
+          {isFa ? 'خلاصه راهبردی: دو پروژه، یک قلب تپنده' : 'Strategic Overview: Two Projects, One Shared Core'}
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+          {isFa ? (
+            <>
+              <strong>پارچ گنو/لینوکس (Parch GNU/Linux)</strong> و <strong>آپادانا (Apadana Linux)</strong> دو روی یک سکه‌اند؛ یکی نماینده روح پویای جامعه آزاد و دیگری پاسخگوی نیازهای بدون ریسک و تضمین‌شده شرکت‌ها و سازمان‌های بزرگ. ما باور داریم نرم‌افزار سازمانی پایدار هرگز در اتاق‌های دربسته شکل نمی‌گیرد، بلکه بر پایه اکوسیستم‌های آزموده‌شده متن‌باز رشد می‌یابد.
+            </>
+          ) : (
+            <>
+              <strong>Parch GNU/Linux</strong> and <strong>Apadana Linux</strong> represent two complementary sides of a single modern operating system philosophy: the fast-moving open-source community engine and the zero-risk, commercially supported enterprise edition. We believe robust enterprise software must be grounded in transparent, community-tested foundations.
+            </>
+          )}
+        </p>
+      </div>
+
+      <!-- 3 Tier Architecture Flow -->
+      <div class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-xl font-bold text-white">
+            {isFa ? 'زنجیره ارزش و نحوه ارتباط لایه‌ها' : 'Value Stream & Layered Relationship'}
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1 font-light">
+            {isFa ? 'جریان نوآوری از جامعه به محصول نهایی سازمانی' : 'How innovation flows from community experimentation into enterprise stability'}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          
+          <!-- Step 1: Parch Linux -->
+          <div class="p-5 rounded-lg enterprise-card border border-white/10 flex flex-col justify-between space-y-4">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <img src="/logo-white.svg" alt="Parch Linux" class="w-6 h-6 object-contain" />
+                <span class="text-xs font-mono font-bold text-slate-400">01</span>
+              </div>
+              <h3 class="font-bold text-white text-base">
+                {isFa ? 'پارچ لینوکس (Parch Community)' : 'Parch Linux (Community)'}
+              </h3>
+              <p class="text-xs text-slate-300 leading-relaxed font-light">
+                {isFa
+                  ? 'بستر آزاد نوآوری، مشارکت آزاد برنامه‌نویسان، آزمایش پکیج‌های پیشرو، دریافت بازخورد هزاران کاربر روزمره و بهبود مداوم هسته دسکتاپ.'
+                  : 'The open testing ground: rapid feature adoption, community contributions, user feedback from thousands of passionate daily Linux users.'}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 text-[11px] text-slate-400 font-mono">
+              {isFa ? 'نقش: نوآوری و پالایش متن‌باز' : 'Role: Innovation & Upstream Testing'}
+            </div>
+          </div>
+
+          <!-- Step 2: Parch Immutable -->
+          <div class="p-5 rounded-lg enterprise-card border border-white/10 bg-secondary/30 flex flex-col justify-between space-y-4">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-6 h-6 rounded bg-secondary flex items-center justify-center text-parch-teal font-bold text-xs">
+                  PI
+                </div>
+                <span class="text-xs font-mono font-bold text-parch-teal">02</span>
+              </div>
+              <h3 class="font-bold text-white text-base">
+                {isFa ? 'پارچ تغییرناپذیر (Parch Immutable)' : 'Parch Immutable Core'}
+              </h3>
+              <p class="text-xs text-slate-300 leading-relaxed font-light">
+                {isFa
+                  ? 'مهندسی پایه معماری bootc، بسته‌بندی ایمیج‌های کانتینری OCI، قفل کردن سیستم ریشه و ایجاد زیرساخت به‌روزرسانی اتمیک.'
+                  : 'The technical blueprint: bootc containerization, OSTree transactional staging, read-only system root, and atomic packaging engine.'}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 text-[11px] text-parch-teal font-mono">
+              {isFa ? 'نقش: زیرساخت و پشته فنی مشترک' : 'Role: Shared Technical Infrastructure'}
+            </div>
+          </div>
+
+          <!-- Step 3: Apadana -->
+          <div class="p-5 rounded-lg enterprise-card border border-parch-teal/30 bg-[#071322] flex flex-col justify-between space-y-4">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-6 h-6 rounded bg-parch flex items-center justify-center text-white font-bold text-xs">
+                  A
+                </div>
+                <span class="text-xs font-mono font-bold text-parch-teal">03</span>
+              </div>
+              <h3 class="font-bold text-white text-base">
+                {isFa ? 'آپادانا (Apadana Enterprise)' : 'Apadana Linux (Enterprise)'}
+              </h3>
+              <p class="text-xs text-slate-300 leading-relaxed font-light">
+                {isFa
+                  ? 'محصول تجاری سخت‌گیرانه با چرخه عمر چندساله LTS، کنترل ناوگان متمرکز، پشتیبانی SLA تجاری، انطباق با قوانین اداری و سفارشی‌سازی بومی.'
+                  : 'The commercial product: multi-year LTS guarantees, 24/7 SLA commercial support, fleet deployment pipelines, and enterprise security compliance.'}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-white/5 text-[11px] text-parch-teal font-mono">
+              {isFa ? 'نقش: پایداری و تعهد سازمانی' : 'Role: Enterprise Commercial SLA'}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Comparison Matrix Grid -->
+      <div class="space-y-5">
+        <h2 class="text-xl font-bold text-white text-center">
+          {isFa ? 'کدام گزینه برای شما مناسب است؟' : 'Which Edition Fits Your Requirements?'}
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="p-6 rounded-lg enterprise-card border border-white/10 space-y-4">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              {isFa ? 'پارچ لینوکس را انتخاب کنید اگر:' : 'Choose Parch Linux if:'}
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300 font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-slate-500 mt-1">•</span>
+                <span>{isFa ? 'کاربر خانگی، دانشجو، علاقه‌مند یا توسعه‌دهنده مستقل هستید.' : 'You are a home user, developer, student, or Linux enthusiast.'}</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-slate-500 mt-1">•</span>
+                <span>{isFa ? 'می‌خواهید جدیدترین بسته‌های نرم‌افزاری و ویژگی‌های تازه را بلافاصله تجربه کنید.' : 'You want access to bleeding-edge desktop software packages.'}</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-slate-500 mt-1">•</span>
+                <span>{isFa ? 'به پشتیبانی عمومی در انجمن‌ها و چت‌های کاربران متکی هستید.' : 'Community forums and peer-to-peer discussions suit your support needs.'}</span>
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="https://parchlinux.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-xs text-parch-teal hover:underline font-semibold"
+              >
+                <span>{isFa ? 'مشاهده وبسایت پارچ لینوکس' : 'Go to Parch Linux Website'}</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-lg enterprise-card border border-parch-teal/30 bg-[#071322] space-y-4">
+            <div class="text-xs font-bold text-parch-teal uppercase tracking-wider">
+              {isFa ? 'آپادانا لینوکس را انتخاب کنید اگر:' : 'Choose Apadana Linux if:'}
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200 font-light">
+              <li class="flex items-start gap-2">
+                <span class="text-parch-teal mt-1">✔</span>
+                <span>{isFa ? 'یک شرکت، سازمان دولتی، بانک یا مرکز داده با صدها ایستگاه کاری هستید.' : 'You manage workstations for a corporation, university, or governmental department.'}</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-parch-teal mt-1">✔</span>
+                <span>{isFa ? 'توقف و خطای ناشی از آپدیت به هیچ وجه در سازمان شما پذیرفته نیست.' : 'Downtime from update regression is strictly unacceptable in your SLA.'}</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-parch-teal mt-1">✔</span>
+                <span>{isFa ? 'نیازمند پشتیبانی قراردادی رسمی، مشاوره در استقرار و تیم متعهد SLA هستید.' : 'You require formal vendor backing, migration workshops, and incident SLAs.'}</span>
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href={`/${lang}/contact`}
+                class="inline-flex items-center gap-1.5 text-xs text-white bg-parch hover:opacity-95 px-4 py-2 rounded-md font-semibold shadow-sm"
+              >
+                <span>{isFa ? 'درخواست مشاوره استقرار آپادانا' : 'Inquire for Enterprise Apadana'}</span>
+                <svg class={`w-3.5 h-3.5 ${rtl ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

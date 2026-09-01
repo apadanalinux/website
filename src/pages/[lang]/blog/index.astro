@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, isRTL } from '../../../i18n/utils';
+import type { Locale } from '../../../i18n/translations';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'fa' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Locale };
+const t = useTranslations(lang);
+const rtl = isRTL(lang);
+const isFa = lang === 'fa';
+
+const allPosts = await getCollection('blog');
+const currentLangPosts = allPosts
+  .filter((p) => p.data.lang === lang)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const getCleanSlug = (slug: string) => {
+  const parts = slug.split('/');
+  return parts.length > 1 ? parts.slice(1).join('/') : slug;
+};
+---
+
+<BaseLayout
+  title={`${t('blog.title')} | Apadana Linux`}
+  description={t('blog.subtitle')}
+  lang={lang}
+>
+  <div class="py-14 lg:py-20 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Page Header -->
+      <div class="text-center space-y-3 max-w-3xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          {t('blog.title')}
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed font-light">
+          {t('blog.subtitle')}
+        </p>
+      </div>
+
+      <!-- Upstream Parch Blog Banner -->
+      <div class="enterprise-card rounded-lg p-5 sm:p-6 border border-parch-teal/30 bg-[#071322] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="space-y-1 text-center sm:text-start">
+          <div class="font-bold text-white text-sm">
+            {isFa ? 'دنبال اخبار و مقالات جامعه کاربری پارچ لینوکس هستید؟' : 'Looking for community articles from Parch Linux?'}
+          </div>
+          <div class="text-xs text-slate-400 font-light">
+            {isFa ? 'وبلاگ جامعه پارچ شامل آموزش‌های دسکتاپ، معرفی ابزارهای متن‌باز و گفتگوهای کاربران است.' : 'The Parch Linux blog contains desktop tutorials, open-source highlights, and community updates.'}
+          </div>
+        </div>
+        <a
+          href="https://blog.parchlinux.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-semibold text-white bg-secondary hover:bg-muted border border-white/10 transition-colors whitespace-nowrap"
+        >
+          <span>{t('blog.parch_blog_link')}</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {currentLangPosts.map((post) => {
+          const formattedDate = new Intl.DateTimeFormat(isFa ? 'fa-IR' : 'en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          }).format(post.data.pubDate);
+
+          return (
+            <article class="enterprise-card rounded-lg p-5 border border-white/10 flex flex-col justify-between hover:border-parch-teal/40 transition-colors group">
+              <div class="space-y-3.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  {post.data.tags.slice(0, 2).map((tag) => (
+                    <span class="text-[10px] font-medium px-2 py-0.5 rounded bg-secondary text-parch-teal border border-white/10">
+                      #{tag}
+                    </span>
+                  ))}
+                  <span class="text-[11px] text-slate-500 ms-auto font-mono">
+                    {formattedDate}
+                  </span>
+                </div>
+
+                <h2 class="font-bold text-base text-white group-hover:text-parch-teal transition-colors leading-snug">
+                  <a href={`/${lang}/blog/${getCleanSlug(post.slug)}`}>
+                    {post.data.title}
+                  </a>
+                </h2>
+
+                <p class="text-xs sm:text-sm text-slate-300 line-clamp-3 leading-relaxed font-light">
+                  {post.data.description}
+                </p>
+              </div>
+
+              <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded bg-parch flex items-center justify-center text-white font-bold text-[10px]">
+                    {post.data.author.charAt(0)}
+                  </div>
+                  <span class="text-slate-300 text-xs">{post.data.author}</span>
+                </div>
+
+                <a
+                  href={`/${lang}/blog/${getCleanSlug(post.slug)}`}
+                  class="font-semibold text-parch-teal group-hover:underline inline-flex items-center gap-1"
+                >
+                  <span>{t('blog.read_more')}</span>
+                  <span class={rtl ? 'rotate-180' : ''}>→</span>
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

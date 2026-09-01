@@ -1,0 +1,61 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { isRTL } from '../i18n/utils';
+import type { Locale } from '../i18n/translations';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Locale;
+}
+
+const {
+  title = 'Apadana Linux | Enterprise Immutable Operating System',
+  description = 'Stable, secure, and predictable operating system for enterprise and commercial organizations, powered by Parch Immutable and bootc.',
+  lang = 'fa',
+} = Astro.props;
+
+const rtl = isRTL(lang);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang={lang} dir={rtl ? 'rtl' : 'ltr'} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/logo-white.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#020917] text-slate-100 antialiased selection:bg-parch-teal selection:text-slate-950 bg-parch-grid relative">
+    
+    <!-- Sticky Header -->
+    <Header lang={lang} />
+
+    <!-- Main Content -->
+    <main class="flex-grow relative z-10">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer lang={lang} />
+  </body>
+</html>

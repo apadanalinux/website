@@ -1,0 +1,142 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Locale } from '../i18n/translations';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const isFa = lang === 'fa';
+---
+
+<footer class="border-t border-white/10 bg-[#020917] mt-auto pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+      
+      <!-- Brand column -->
+      <div class="lg:col-span-2 space-y-3">
+        <div class="flex items-center gap-2.5">
+          <img
+            src="/logo-white.svg"
+            alt="Parch Linux"
+            class="w-7 h-7 object-contain"
+          />
+          <span class="font-bold text-lg text-white">Apadana Linux</span>
+        </div>
+        <p class="text-sm text-slate-400 max-w-sm leading-relaxed font-light">
+          {t('footer.tagline')}
+        </p>
+      </div>
+
+      <!-- Column 1: Product -->
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">
+          {t('footer.col_product')}
+        </h4>
+        <ul class="space-y-2.5 text-xs text-slate-400">
+          <li>
+            <a href={`/${lang}/#architecture`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'معماری تغییرناپذیر bootc' : 'bootc Architecture'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/#technical`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'مدل نرم‌افزارهای ایزوله' : 'Flatpak & Distrobox'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/#kde-persian`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'میزکار بومی KDE Plasma' : 'KDE Plasma & Persian'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/#enterprise`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'پایداری سازمانی و LTS' : 'LTS & SLA Guarantees'}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Documentation -->
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">
+          {t('footer.col_resources')}
+        </h4>
+        <ul class="space-y-2.5 text-xs text-slate-400">
+          <li>
+            <a href={`/${lang}/docs/overview`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'راهنمای راه‌اندازی' : 'Getting Started Guide'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/docs/atomic-updates`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'به‌روزرسانی و Rollback' : 'Updates & Rollback'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/docs/enterprise-fleet`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'مدیریت ناوگان سازمانی' : 'Fleet Management'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/faq`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'پرسش‌های متداول' : 'Frequently Asked Questions'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/blog`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'وبلاگ و اخبار مهندسی' : 'Engineering Blog'}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Community & Parch Upstream -->
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">
+          {t('footer.col_community')}
+        </h4>
+        <ul class="space-y-2.5 text-xs text-slate-400">
+          <li>
+            <a href={`/${lang}/about-parch`} class="hover:text-parch-teal transition-colors">
+              {isFa ? 'رابطه با پارچ لینوکس' : 'Apadana & Parch Lineage'}
+            </a>
+          </li>
+          <li>
+            <a href="https://parchlinux.com" target="_blank" rel="noopener noreferrer" class="hover:text-parch-teal transition-colors inline-flex items-center gap-1">
+              <span>{isFa ? 'وبسایت پارچ لینوکس' : 'Parch Linux Home'}</span>
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://forum.parchlinux.com" target="_blank" rel="noopener noreferrer" class="hover:text-parch-teal transition-colors inline-flex items-center gap-1">
+              <span>{isFa ? 'تالار گفتگوی پارچ' : 'Parch Forum'}</span>
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://wiki.parchlinux.com" target="_blank" rel="noopener noreferrer" class="hover:text-parch-teal transition-colors inline-flex items-center gap-1">
+              <span>{isFa ? 'ویکی پارچ لینوکس' : 'Parch Wiki'}</span>
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>{t('footer.rights')}</p>
+      <p>{t('footer.opensource_note')}</p>
+    </div>
+  </div>
+</footer>

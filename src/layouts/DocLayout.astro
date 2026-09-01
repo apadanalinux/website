@@ -1,0 +1,202 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { useTranslations, isRTL } from '../i18n/utils';
+import type { Locale } from '../i18n/translations';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  doc: CollectionEntry<'docs'>;
+  allDocs: CollectionEntry<'docs'>[];
+  lang: Locale;
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { doc, allDocs, lang, headings } = Astro.props;
+const t = useTranslations(lang);
+const rtl = isRTL(lang);
+const isFa = lang === 'fa';
+
+// Group docs by section
+const currentLangDocs = allDocs
+  .filter((d) => d.data.lang === lang)
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+
+const sections = Array.from(new Set(currentLangDocs.map((d) => d.data.section)));
+
+// Find current doc index for Prev/Next navigation
+const currentDocIndex = currentLangDocs.findIndex((d) => d.slug === doc.slug);
+const prevDoc = currentDocIndex > 0 ? currentLangDocs[currentDocIndex - 1] : null;
+const nextDoc = currentDocIndex < currentLangDocs.length - 1 ? currentLangDocs[currentDocIndex + 1] : null;
+
+// Clean slug
+const getCleanDocSlug = (slug: string) => {
+  const parts = slug.split('/');
+  return parts.length > 1 ? parts.slice(1).join('/') : slug;
+};
+---
+
+<BaseLayout
+  title={`${doc.data.title} | ${t('docs.title')}`}
+  description={doc.data.description}
+  lang={lang}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Sidebar (3 cols) -->
+      <aside class="lg:col-span-3 sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2 pb-8">
+        <div class="enterprise-card rounded-lg p-4 border border-white/10 space-y-5">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <h3 class="font-bold text-xs uppercase tracking-wider text-slate-300">
+              {t('docs.sidebar_title')}
+            </h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-secondary text-parch-teal border border-white/10">
+              v1.2 LTS
+            </span>
+          </div>
+
+          <div class="space-y-5 text-xs">
+            {sections.map((section) => {
+              const sectionDocs = currentLangDocs.filter((d) => d.data.section === section);
+              return (
+                <div class="space-y-1.5">
+                  <div class="font-semibold text-slate-300 px-2 py-1 bg-secondary/80 rounded border border-white/5">
+                    {section}
+                  </div>
+                  <ul class="space-y-0.5 ps-1">
+                    {sectionDocs.map((item) => {
+                      const cleanSlug = getCleanDocSlug(item.slug);
+                      const isCurrent = item.slug === doc.slug;
+                      return (
+                        <li>
+                          <a
+                            href={`/${lang}/docs/${cleanSlug}`}
+                            class={`block px-2.5 py-1.5 rounded transition-colors leading-relaxed ${
+                              isCurrent
+                                ? 'bg-secondary text-parch-teal font-semibold border-s-2 border-parch-teal'
+                                : 'text-slate-400 hover:text-white hover:bg-white/5'
+                            }`}
+                          >
+                            {item.data.title}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Doc Content (6 cols) -->
+      <article class="lg:col-span-6 enterprise-card rounded-lg p-6 sm:p-8 border border-white/10 shadow-lg space-y-6">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-xs text-slate-400 border-b border-white/10 pb-3">
+          <a href={`/${lang}/`} class="hover:text-white transition-colors">{t('nav.home')}</a>
+          <span>/</span>
+          <a href={`/${lang}/docs`} class="hover:text-white transition-colors">{t('nav.docs')}</a>
+          <span>/</span>
+          <span class="text-slate-300">{doc.data.section}</span>
+        </nav>
+
+        <!-- Document Heading -->
+        <div class="space-y-2">
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            {doc.data.title}
+          </h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            {doc.data.description}
+          </p>
+        </div>
+
+        <!-- Markdown Body -->
+        <div class="prose prose-invert max-w-none text-sm sm:text-base leading-relaxed font-light">
+          <slot />
+        </div>
+
+        <!-- Prev / Next Navigation -->
+        <div class="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {prevDoc ? (
+            <a
+              href={`/${lang}/docs/${getCleanDocSlug(prevDoc.slug)}`}
+              class="p-3.5 rounded-lg enterprise-surface border border-white/10 hover:border-parch-teal/40 text-start group space-y-1"
+            >
+              <div class="text-[11px] text-slate-400 flex items-center gap-1">
+                <span class={rtl ? 'rotate-180' : ''}>←</span>
+                <span>{t('docs.prev')}</span>
+              </div>
+              <div class="text-xs font-semibold text-white group-hover:text-parch-teal transition-colors">
+                {prevDoc.data.title}
+              </div>
+            </a>
+          ) : (
+            <div></div>
+          )}
+
+          {nextDoc ? (
+            <a
+              href={`/${lang}/docs/${getCleanDocSlug(nextDoc.slug)}`}
+              class="p-3.5 rounded-lg enterprise-surface border border-white/10 hover:border-parch-teal/40 text-end group space-y-1"
+            >
+              <div class="text-[11px] text-slate-400 flex items-center justify-end gap-1">
+                <span>{t('docs.next')}</span>
+                <span class={rtl ? 'rotate-180' : ''}>→</span>
+              </div>
+              <div class="text-xs font-semibold text-white group-hover:text-parch-teal transition-colors">
+                {nextDoc.data.title}
+              </div>
+            </a>
+          ) : (
+            <div></div>
+          )}
+        </div>
+
+      </article>
+
+      <!-- Right Table of Contents (3 cols) -->
+      <aside class="hidden lg:block lg:col-span-3 sticky top-24 space-y-5">
+        {headings.filter(h => h.depth <= 3).length > 0 && (
+          <div class="enterprise-card rounded-lg p-4 border border-white/10 space-y-3">
+            <h4 class="font-bold text-xs uppercase tracking-wider text-slate-300 border-b border-white/10 pb-2">
+              {t('docs.on_this_page')}
+            </h4>
+            <ul class="space-y-1.5 text-xs font-light">
+              {headings.filter(h => h.depth <= 3).map((h) => (
+                <li class={`leading-relaxed ${h.depth === 3 ? 'ps-3 text-slate-400' : 'text-slate-300'}`}>
+                  <a
+                    href={`#${h.slug}`}
+                    class="hover:text-parch-teal transition-colors block"
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Help Box -->
+        <div class="p-4 rounded-lg enterprise-card border border-white/10 space-y-2 text-xs">
+          <div class="font-bold text-white">
+            {isFa ? 'نیاز به راهنمایی در استقرار دارید؟' : 'Need Deployment Assistance?'}
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed font-light">
+            {isFa
+              ? 'تیم مهندسی آپادانا آماده پاسخگویی به ابهامات معماری کانتینری و bootc در سازمان شماست.'
+              : 'Our engineering team is ready to consult on bootc and container workstation setups.'}
+          </p>
+          <a
+            href={`/${lang}/contact`}
+            class="inline-block pt-1 text-parch-teal hover:underline font-semibold"
+          >
+            {isFa ? 'تماس با تیم مهندسی ←' : 'Contact Solutions Team →'}
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</BaseLayout>

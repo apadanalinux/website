@@ -1,0 +1,118 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Estedad';
+  src: url('/fonts/Estedad-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Estedad';
+  src: url('/fonts/Estedad-Medium.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Estedad';
+  src: url('/fonts/Estedad-Bold.woff2') format('woff2');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  font-family: 'Estedad', 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #020917;
+  color: #f8fafc;
+  scroll-behavior: smooth;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Parch Linux Accent Classes */
+.bg-parch {
+  background: linear-gradient(90deg, #21c796 15%, #0385ce 95%, #0d40bf 120%);
+}
+
+.text-parch {
+  background: linear-gradient(150deg, #21c796 40%, #0385ce 85%, #0d40bf 120%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Parch Grid Pattern Background */
+.bg-parch-grid {
+  background: linear-gradient(180deg, rgba(2, 9, 23, 0.75) 0%, #020917 100%),
+    url('/images/grid.png');
+  background-size: cover;
+}
+
+/* Professional Enterprise Cards (Non-vibecoded, crisp borders) */
+.enterprise-card {
+  background: #0b1322;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+}
+
+.enterprise-card:hover {
+  border-color: rgba(33, 199, 150, 0.35);
+}
+
+.enterprise-surface {
+  background: #111c30;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.375rem;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020917;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Code block highlight styling */
+pre {
+  border: 1px solid #1e293b !important;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
