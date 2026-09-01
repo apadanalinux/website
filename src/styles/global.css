@@ -60,13 +60,6 @@ html {
   background-clip: text;
 }
 
-/* Parch Grid Pattern Background */
-.bg-parch-grid {
-  background: linear-gradient(180deg, rgba(2, 9, 23, 0.75) 0%, #020917 100%),
-    url('/images/grid.png');
-  background-size: cover;
-}
-
 /* Professional Enterprise Cards (Non-vibecoded, crisp borders) */
 .enterprise-card {
   background: #0b1322;
