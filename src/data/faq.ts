@@ -23,8 +23,8 @@ export const faqList: FaqItem[] = [
       en: 'How does Apadana differ from Parch Linux?',
     },
     a: {
-      fa: 'پارچ گنو/لینوکس یک پروژه‌ی متن‌باز و جامعه‌محور است که به‌صورت آزاد توسعه داده می‌شود و در اختیار عموم کاربران قرار دارد. آپادانا نسخه‌ی سازمانی و تجاری است که بر پایه‌ی همان فناوری، یعنی معماری تغییرناپذیر پارچ ایمیوتبل، ساخته شده اما برای نیازهای سازمان‌ها و کسب‌وکارها طراحی شده است. به بیان دیگر، پارچ پایه‌ی فنی مشترک است و آپادانا محصولی است که با تمرکز بر پایداری، پشتیبانی و ملاحظات سازمانی روی همان پایه بنا شده است.',
-      en: 'Parch GNU/Linux is an open-source, community-driven project developed freely for general users and enthusiasts. Apadana is the commercial enterprise edition built on the exact same technical foundation—Parch Immutable architecture—but tailored specifically for corporate and institutional requirements. In other words, Parch serves as the shared technical core, while Apadana is the enterprise product layered on top with dedicated focus on stability, SLA support, and organizational policies.',
+      fa: 'پارچ لینوکس یک پروژه‌ی متن‌باز و جامعه‌محور است که به‌صورت آزاد توسعه داده می‌شود و در اختیار عموم کاربران قرار دارد. آپادانا نسخه‌ی سازمانی و تجاری است که بر پایه‌ی همان فناوری، یعنی معماری پارچ تغییرناپذیر، ساخته شده اما برای نیازهای سازمان‌ها و کسب‌وکارها طراحی شده است. به بیان دیگر، پارچ پایه‌ی فنی مشترک است و آپادانا محصولی است که با تمرکز بر پایداری، پشتیبانی و ملاحظات سازمانی روی همان پایه بنا شده است.',
+      en: 'Parch Linux is an open-source, community-driven project developed freely for general users and enthusiasts. Apadana is the commercial enterprise edition built on the exact same technical foundation—Parch Immutable architecture—but tailored specifically for corporate and institutional requirements. In other words, Parch serves as the shared technical core, while Apadana is the enterprise product layered on top with dedicated focus on stability, SLA support, and organizational policies.',
     },
   },
   {
@@ -199,7 +199,7 @@ export const faqList: FaqItem[] = [
     id: 16,
     category: { fa: 'معماری و پایداری', en: 'Architecture & Stability' },
     q: {
-      fa: 'تفاوت آپادانا با سایر توزیع‌های ایمیوتبل مانند Fedora Silverblue یا openSUSE Aeon چیست؟',
+      fa: 'تفاوت آپادانا با سایر توزیع‌های تغییرناپذیر مانند Fedora Silverblue یا openSUSE Aeon چیست؟',
       en: 'How does Apadana compare to other immutable distributions like Fedora Silverblue or openSUSE Aeon?',
     },
     a: {
