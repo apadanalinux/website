@@ -23,7 +23,7 @@ export const faqList: FaqItem[] = [
       en: 'How does Apadana differ from Parch Linux?',
     },
     a: {
-      fa: 'پارچ لینوکس یک پروژه‌ی متن‌باز و جامعه‌محور است که به‌صورت آزاد توسعه داده می‌شود و در اختیار عموم کاربران قرار دارد. آپادانا نسخه‌ی سازمانی و تجاری است که بر پایه‌ی همان فناوری، یعنی معماری پارچ تغییرناپذیر، ساخته شده اما برای نیازهای سازمان‌ها و کسب‌وکارها طراحی شده است. به بیان دیگر، پارچ پایه‌ی فنی مشترک است و آپادانا محصولی است که با تمرکز بر پایداری، پشتیبانی و ملاحظات سازمانی روی همان پایه بنا شده است.',
+      fa: 'پارچ گنو/لینوکس یک پروژه‌ی متن‌باز و جامعه‌محور است که به‌صورت آزاد توسعه داده می‌شود و در اختیار عموم کاربران قرار دارد. آپادانا نسخه‌ی سازمانی و تجاری است که بر پایه‌ی همان فناوری، یعنی معماری پارچ تغییرناپذیر، ساخته شده اما برای نیازهای سازمان‌ها و کسب‌وکارها طراحی شده است. به بیان دیگر، پارچ گنو/لینوکس پایه‌ی فنی مشترک است و آپادانا محصولی است که با تمرکز بر پایداری، پشتیبانی و ملاحظات سازمانی روی همان پایه بنا شده است.',
       en: 'Parch Linux is an open-source, community-driven project developed freely for general users and enthusiasts. Apadana is the commercial enterprise edition built on the exact same technical foundation—Parch Immutable architecture—but tailored specifically for corporate and institutional requirements. In other words, Parch serves as the shared technical core, while Apadana is the enterprise product layered on top with dedicated focus on stability, SLA support, and organizational policies.',
     },
   },
@@ -47,7 +47,7 @@ export const faqList: FaqItem[] = [
       en: 'Is Apadana a government project?',
     },
     a: {
-      fa: 'خیر. آپادانا پروژه‌ای مستقل و تجاری است که توسط تیم پارچ لینوکس توسعه داده می‌شود و هیچ ارتباطی با نهادهای دولتی ندارد.',
+      fa: 'خیر. آپادانا پروژه‌ای مستقل و تجاری است که توسط تیم پارچ گنو/لینوکس توسعه داده می‌شود و هیچ ارتباطی با نهادهای دولتی ندارد.',
       en: 'No. Apadana is a completely independent, commercial project engineered and maintained by the Parch Linux team, with no affiliation to government entities.',
     },
   },
@@ -95,7 +95,7 @@ export const faqList: FaqItem[] = [
       en: 'Is Apadana a rolling release distribution?',
     },
     a: {
-      fa: 'خیر. برخلاف پارچ که یک توزیع غلتان (Rolling Release) است، آپادانا به‌دلیل ماهیت سازمانی و نیاز به پایداری بلندمدت، بر اساس نسخه‌های مشخص و تست‌شده منتشر خواهد شد.',
+      fa: 'خیر. برخلاف پارچ گنو/لینوکس که یک توزیع غلتان (Rolling Release) است، آپادانا به‌دلیل ماهیت سازمانی و نیاز به پایداری بلندمدت، بر اساس نسخه‌های مشخص و تست‌شده منتشر خواهد شد.',
       en: 'No. Unlike Parch Linux which follows a rolling-release model for continuous innovation, Apadana is published on disciplined, discrete, rigorously tested versioned releases to fulfill enterprise requirements for predictability and long-term stability.',
     },
   },
@@ -143,7 +143,7 @@ export const faqList: FaqItem[] = [
       en: "What is Apadana's LTS lifecycle and update cadence?",
     },
     a: {
-      fa: 'برخلاف پارچ که یک توزیع غلتان است، آپادانا بر اساس نسخه‌های مشخص منتشر می‌شود و برای هر نسخه دوره‌ی پشتیبانی بلندمدت در نظر گرفته خواهد شد. جزئیات دقیق طول این دوره پیش از عرضه‌ی نهایی مشخص و اعلام می‌شود.',
+      fa: 'برخلاف پارچ گنو/لینوکس که یک توزیع غلتان است، آپادانا بر اساس نسخه‌های مشخص منتشر می‌شود و برای هر نسخه دوره‌ی پشتیبانی بلندمدت در نظر گرفته خواهد شد. جزئیات دقیق طول این دوره پیش از عرضه‌ی نهایی مشخص و اعلام می‌شود.',
       en: 'Unlike rolling distributions, Apadana follows fixed, point-release version milestones with dedicated Long-Term Support (LTS) lifecycles for each major version. Exact LTS maintenance durations will be formalized prior to general availability.',
     },
   },
@@ -251,7 +251,7 @@ export const faqList: FaqItem[] = [
       en: 'Which languages are supported in addition to Persian?',
     },
     a: {
-      fa: 'آپادانا بر پایه‌ی KDE Plasma ساخته شده و از تمام زبان‌هایی که این محیط دسکتاپ پشتیبانی می‌کند بهره می‌برد، با این تفاوت که فارسی به‌عنوان زبان اصلی و اولویت‌دار توسعه و بومی‌سازی در نظر گرفته شده است.',
+      fa: 'آپادانا بر پایه‌ی کیدیای پلاسما ساخته شده و از تمام زبان‌هایی که این محیط دسکتاپ پشتیبانی می‌کند بهره می‌برد، با این تفاوت که فارسی به‌عنوان زبان اصلی و اولویت‌دار توسعه و بومی‌سازی در نظر گرفته شده است.',
       en: 'Apadana is built upon KDE Plasma and inherits all languages supported by the KDE ecosystem, with Persian designated as the primary first-class citizen for all localization, typography, and regional ergonomic development.',
     },
   },

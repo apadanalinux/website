@@ -17,8 +17,8 @@ const isFa = lang === 'fa';
 ---
 
 <BaseLayout
-  title={isFa ? 'ارتباط آپادانا و پارچ لینوکس | بنیاد مشترک و مأموریت‌ها' : 'Apadana & Parch Linux Relationship | Shared Foundation, Distinct Missions'}
-  description={isFa ? 'بررسی جامع رابطه میان پروژه جامعه‌محور پارچ لینوکس و نسخه تجاری-سازمانی آپادانا لینوکس.' : 'Comprehensive overview of the relationship between the community Parch Linux project and commercial Apadana Linux.'}
+  title={isFa ? 'ارتباط آپادانا و پارچ گنو/لینوکس | بنیاد مشترک و مأموریت‌ها' : 'Apadana & Parch Linux Relationship | Shared Foundation, Distinct Missions'}
+  description={isFa ? 'بررسی جامع رابطه میان پروژه جامعه‌محور پارچ گنو/لینوکس و نسخه تجاری-سازمانی آپادانا لینوکس.' : 'Comprehensive overview of the relationship between the community Parch Linux project and commercial Apadana Linux.'}
   lang={lang}
 >
   <div class="py-14 lg:py-20 relative">
@@ -42,7 +42,7 @@ const isFa = lang === 'fa';
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
           {isFa ? (
             <>
-              <strong>پارچ لینوکس (Parch Linux)</strong> و <strong>آپادانا (Apadana Linux)</strong> دو روی یک سکه‌اند؛ یکی نماینده روح پویای جامعه آزاد و دیگری پاسخگوی نیازهای بدون ریسک و تضمین‌شده شرکت‌ها و سازمان‌های بزرگ. ما باور داریم نرم‌افزار سازمانی پایدار هرگز در اتاق‌های دربسته شکل نمی‌گیرد، بلکه بر پایه اکوسیستم‌های آزموده‌شده متن‌باز رشد می‌یابد.
+              <strong>پارچ گنو/لینوکس</strong> و <strong>آپادانا</strong> دو روی یک سکه‌اند؛ یکی نماینده روح پویای جامعه آزاد و دیگری پاسخگوی نیازهای بدون ریسک و تضمین‌شده شرکت‌ها و سازمان‌های بزرگ. ما باور داریم نرم‌افزار سازمانی پایدار هرگز در اتاق‌های دربسته شکل نمی‌گیرد، بلکه بر پایه اکوسیستم‌های آزموده‌شده متن‌باز رشد می‌یابد.
             </>
           ) : (
             <>
@@ -73,7 +73,7 @@ const isFa = lang === 'fa';
                 <span class="text-xs font-mono font-bold text-slate-400">01</span>
               </div>
               <h3 class="font-bold text-white text-base">
-                {isFa ? 'پارچ لینوکس (Parch Community)' : 'Parch Linux (Community)'}
+                {isFa ? 'پارچ گنو/لینوکس (جامعه‌محور)' : 'Parch Linux (Community)'}
               </h3>
               <p class="text-xs text-slate-300 leading-relaxed font-light">
                 {isFa
@@ -96,7 +96,7 @@ const isFa = lang === 'fa';
                 <span class="text-xs font-mono font-bold text-parch-teal">02</span>
               </div>
               <h3 class="font-bold text-white text-base">
-                {isFa ? 'پارچ تغییرناپذیر (Parch Immutable)' : 'Parch Immutable Core'}
+                {isFa ? 'پارچ تغییرناپذیر' : 'Parch Immutable Core'}
               </h3>
               <p class="text-xs text-slate-300 leading-relaxed font-light">
                 {isFa
@@ -119,7 +119,7 @@ const isFa = lang === 'fa';
                 <span class="text-xs font-mono font-bold text-parch-teal">03</span>
               </div>
               <h3 class="font-bold text-white text-base">
-                {isFa ? 'آپادانا (Apadana Enterprise)' : 'Apadana Linux (Enterprise)'}
+                {isFa ? 'آپادانا (نسخه سازمانی)' : 'Apadana Linux (Enterprise)'}
               </h3>
               <p class="text-xs text-slate-300 leading-relaxed font-light">
                 {isFa
@@ -145,7 +145,7 @@ const isFa = lang === 'fa';
           
           <div class="p-6 rounded-lg enterprise-card border border-white/10 space-y-4">
             <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">
-              {isFa ? 'پارچ لینوکس را انتخاب کنید اگر:' : 'Choose Parch Linux if:'}
+              {isFa ? 'پارچ گنو/لینوکس را انتخاب کنید اگر:' : 'Choose Parch Linux if:'}
             </div>
             <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300 font-light">
               <li class="flex items-start gap-2">
@@ -168,7 +168,7 @@ const isFa = lang === 'fa';
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 text-xs text-parch-teal hover:underline font-semibold"
               >
-                <span>{isFa ? 'مشاهده وبسایت پارچ لینوکس' : 'Go to Parch Linux Website'}</span>
+                <span>{isFa ? 'مشاهده وبسایت پارچ گنو/لینوکس' : 'Go to Parch Linux Website'}</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
